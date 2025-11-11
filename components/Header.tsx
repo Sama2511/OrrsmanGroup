@@ -8,11 +8,19 @@ export default function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <nav
-      className={`fixed top-0 left-1/2 z-50 mt-7 flex w-11/12 max-w-7xl -translate-x-1/2 flex-col justify-center bg-white/40 py-5 backdrop-blur-lg md:rounded-full ${isOpen ? "rounded-sm" : "rounded-full"}`}
+      className={`bg-card/20 fixed top-0 left-1/2 z-50 mt-7 flex w-11/12 max-w-7xl -translate-x-1/2 flex-col justify-center border-2 py-5 backdrop-blur-lg md:rounded-full ${isOpen ? "rounded-sm" : "rounded-full"}`}
     >
       <div className="flex items-center justify-between">
         <div className="mx-10 flex w-full items-center justify-between">
-          <Image src="/LogoOG2.png" alt="logo" width={60} height={60} />
+          <Link href="/">
+            <Image
+              src="/LogoOG2.png"
+              alt="logo"
+              width={40}
+              height={40}
+              className="cursor-pointer"
+            />
+          </Link>
           <div className="mr-20 hidden space-x-5 font-semibold text-black md:block">
             <Link href="/">Home</Link>
             <Link href="/">Services</Link>
