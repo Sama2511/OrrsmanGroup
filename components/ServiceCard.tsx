@@ -3,12 +3,7 @@ import {
   CardContent,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
-import { Icon, Menu } from "lucide-react";
-import Link from "next/link";
-import { Button } from "./ui/button";
-import { LucideIcon } from "lucide-react";
 
 interface ServiceCardProps {
   icon: string;

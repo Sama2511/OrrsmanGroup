@@ -23,7 +23,7 @@ export default function Header() {
           </Link>
           <div className="mr-20 hidden space-x-5 font-semibold text-black md:block">
             <Link href="/">Home</Link>
-            <Link href="/">Services</Link>
+            <Link href="/services">Services</Link>
             <Link href="/">About us</Link>
             <Link href="/">Contact us</Link>
           </div>
@@ -37,7 +37,7 @@ export default function Header() {
       {isOpen && (
         <div className="flex flex-col items-center justify-center gap-3 px-5 py-3 md:hidden">
           <Link href="/">Home</Link>
-          <Link href="/">Services</Link>
+          <Link href="/services">Services</Link>
           <Link href="/">About us</Link>
           <Link href="/">Contact us</Link>
         </div>

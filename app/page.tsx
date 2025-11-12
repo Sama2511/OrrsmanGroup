@@ -38,7 +38,7 @@ export default function Home() {
           className="mt-40 w-full"
         />
         <div className="@container">
-          <div className="bg-card absolute -bottom-75 left-1/2 z-0 mt-8 min-w-[80%] -translate-x-1/2 p-6 xl:p-12 2xl:p-20 @[400]:-bottom-55">
+          <div className="bg-card absolute -bottom-62 left-1/2 z-0 mt-8 min-w-[80%] -translate-x-1/2 p-6 xl:p-12 2xl:p-20 @[400]:-bottom-55">
             <h1 className="text-foreground mb-4 text-3xl leading-tight font-bold @[600]:text-4xl">
               Global Freight &
               <br />
@@ -50,10 +50,13 @@ export default function Home() {
               with Orrsman Group
             </h2>
             <div className="mt-6 flex gap-3 xl:mt-8 2xl:mt-10">
-              <Button className="p-4 text-base font-semibold">
+              <Button className="px-8 py-6 text-base font-semibold">
                 Our services
               </Button>
-              <Button variant="outline" className="p-4 text-base font-semibold">
+              <Button
+                variant="outline"
+                className="px-8 py-6 text-base font-semibold"
+              >
                 Get Quote
               </Button>
             </div>
@@ -77,6 +80,74 @@ export default function Home() {
               description={service.description}
             />
           ))}
+        </div>
+      </section>
+      <section className="bg-secondary mt-20 py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 md:px-12">
+          <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
+            {/* Left Content */}
+            <div className="flex-1">
+              <h1 className="text-foreground mb-6 text-4xl font-bold md:text-4xl">
+                Trusted Logistics Partner
+              </h1>
+              <p className="mb-12 text-lg leading-relaxed text-gray-600">
+                Orrsman Group International Logistics (OG) is a leading
+                Australian freight forwarder with extensive experience in
+                international trade. We provide end-to-end logistics solutions
+                that connect Australian businesses to global markets.
+              </p>
+              <div className="lg:hidden">
+                <img
+                  src="/section4.png"
+                  alt="Logistics"
+                  className="w-full max-w-md lg:max-w-lg"
+                />
+              </div>
+              {/* Stats */}
+              <ul className="mb-10 flex gap-8 md:gap-12">
+                <li className="text-center">
+                  <div className="text-primary mb-2 text-4xl font-bold md:text-5xl">
+                    15+
+                  </div>
+                  <div className="text-sm font-semibold tracking-wider text-gray-600 uppercase md:text-base">
+                    Years Experience
+                  </div>
+                </li>
+                <li className="text-center">
+                  <div className="text-primary mb-2 text-4xl font-bold md:text-5xl">
+                    50+
+                  </div>
+                  <div className="text-sm font-semibold tracking-wider text-gray-600 uppercase md:text-base">
+                    Countries Served
+                  </div>
+                </li>
+                <li className="text-center">
+                  <div className="text-primary mb-2 text-4xl font-bold md:text-5xl">
+                    1000+
+                  </div>
+                  <div className="text-sm font-semibold tracking-wider text-gray-600 uppercase md:text-base">
+                    Happy Clients
+                  </div>
+                </li>
+              </ul>
+
+              <Button
+                variant="outline"
+                className="px-8 py-6 text-base font-semibold"
+              >
+                Learn More
+              </Button>
+            </div>
+
+            {/* Right Image */}
+            <div className="hidden flex-1 justify-center lg:flex">
+              <img
+                src="/section3.png"
+                alt="Logistics"
+                className="w-full max-w-md lg:max-w-lg"
+              />
+            </div>
+          </div>
         </div>
       </section>
     </div>
