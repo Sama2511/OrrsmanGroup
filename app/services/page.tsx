@@ -3,7 +3,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <section className="@container m-auto mt-40 flex max-w-[90%] flex-col items-center justify-center gap-10">
+    <section className="@container m-auto mt-40 mb-30 flex max-w-[90%] flex-col items-center justify-center gap-10">
       <Card className="bg-card flex max-w-[500px] px-2 py-8 md:max-w-[900px] md:flex-row">
         <CardContent className="flex flex-col gap-5 md:max-w-[60%]">
           <div className="text-[50px]">🚢</div>

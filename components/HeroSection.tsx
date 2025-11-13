@@ -3,18 +3,17 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 export default function HeroSection() {
   return (
-    <section className="relative flex h-screen items-center justify-center overflow-hidden bg-[#e7e5e4]">
+    <section className="relative flex h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-[#e7e5e4]">
       <Image
         src="/Homepageimage.png"
         alt="Global logistics illustration"
         fill
         priority
-        className="object-cover opacity-90"
+        className="object-cover opacity-90 md:object-scale-down"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-[#e7e5e4]/60 to-[#e7e5e4]/80"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-[#e7e5e4]/60 to-[#e7e5e4]/80"></div>
 
-      {/* Content */}
       <div className="relative z-10 max-w-3xl px-4 text-center md:px-10">
         <h1 className="mb-6 text-3xl font-bold text-[#1e293b] md:text-5xl">
           Global Freight & Logistics Solutions
@@ -24,13 +23,13 @@ export default function HeroSection() {
           freight, customs clearance, and specialised logistics services with
           Orrsman Group
         </p>
-        <div className="flex flex-col justify-center gap-4 sm:flex-row">
-          <Button className="bg-primary px-8 py-3 text-base transition md:text-lg">
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Button className="bg-primary px-10 py-3 text-base transition md:text-lg">
             Get Quote
           </Button>
           <Button
             variant="outline"
-            className="bg-secondary border-none px-8 py-3 text-base text-[#1e293b] transition md:text-lg"
+            className="bg-secondary border-none px-8 py-2 text-base text-[#1e293b] transition md:text-lg"
           >
             Our Services
           </Button>

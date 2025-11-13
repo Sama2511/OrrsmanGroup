@@ -64,6 +64,40 @@ export default function page() {
           </div>
         </div>
       </section>
+      <section className="bg-secondary mt-20 py-12 pb-40">
+        <div className="container mx-auto flex max-w-[85%] flex-col-reverse items-center justify-center gap-8 md:flex-row md:gap-16">
+          <div className="">
+            <Image
+              src="/about5.jpg"
+              width={500}
+              height={500}
+              className="h-full w-full rounded-[2px] object-cover"
+              alt="Orrsman Group Logistics"
+            />
+          </div>
+          <div className="max-w-[500px] flex-1 space-y-6 text-center md:text-left">
+            <div>
+              <h1 className="text-3xl font-bold text-[#1e293b]">Our Mission</h1>
+              <p className="mt-2 text-[#475569]">
+                To provide comprehensive, reliable, and cost-effective logistics
+                solutions that enable Australian businesses to compete
+                successfully in global markets whilst maintaining the highest
+                standards of service and compliance through Orrsman Group&apos;s
+                expertise.
+              </p>
+            </div>
+            <div>
+              <h1 className="text-3xl font-bold text-[#1e293b]">Our Vision</h1>
+              <p className="mt-2 text-[#475569]">
+                To be Australia&apos;s most trusted international logistics
+                partner, known for our expertise, innovation, and commitment to
+                client success in connecting businesses to global opportunities
+                through Orrsman Group International Logistics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

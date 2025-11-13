@@ -1,13 +1,11 @@
 import { ServiceCard } from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Menu } from "lucide-react";
-import Image from "next/image";
+
 import services from "@/lib/services";
 import HeroSection from "@/components/HeroSection";
 export default function Home() {
   return (
-    <div className="bg-background h-screen">
+    <div className="bg-background">
       <HeroSection />
 
       <section className="">
