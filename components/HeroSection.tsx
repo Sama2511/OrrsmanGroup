@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import Link from "next/link";
 export default function HeroSection() {
   return (
     <section className="relative flex h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-[#e7e5e4]">
@@ -24,15 +25,19 @@ export default function HeroSection() {
           Orrsman Group
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button className="bg-primary px-10 py-3 text-base transition md:text-lg">
-            Get Quote
-          </Button>
-          <Button
-            variant="outline"
-            className="bg-secondary border-none px-8 py-2 text-base text-[#1e293b] transition md:text-lg"
-          >
-            Our Services
-          </Button>
+          <Link href="/contact">
+            <Button className="bg-primary px-10 py-3 text-base transition md:text-lg">
+              Get Quote
+            </Button>
+          </Link>
+          <Link href="/services">
+            <Button
+              variant="outline"
+              className="bg-secondary border-none px-8 py-2 text-base text-[#1e293b] transition md:text-lg"
+            >
+              Our Services
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

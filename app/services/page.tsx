@@ -1,281 +1,227 @@
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Check } from "lucide-react";
 import React from "react";
+import Image from "next/image";
 
-export default function page() {
+const services = [
+  {
+    image: "/newhomeimage.jpg", // Replace with your image paths
+    title: "Sea Freight Services",
+    description:
+      "Cost-effective ocean freight solutions for businesses transporting goods internationally. We handle both FCL and LCL shipments with competitive rates and worldwide port coverage.",
+    features: [
+      "FCL and LCL services",
+      "Door-to-door delivery",
+      "Real-time cargo tracking",
+      "Worldwide port coverage",
+    ],
+    benefits: [
+      { title: "Cost Effective", desc: "Most economical for large shipments" },
+      {
+        title: "Reliable",
+        desc: "Established schedules with trusted carriers",
+      },
+      { title: "Global Network", desc: "Access to major ports worldwide" },
+    ],
+  },
+  {
+    image: "/airFreight.jpg",
+    title: "Air Freight Services",
+    description:
+      "Fast and reliable air cargo services for time-sensitive shipments. Our air freight solutions ensure your goods reach their destination quickly and safely with 24/7 monitoring.",
+    features: [
+      "Express and standard options",
+      "Temperature-controlled handling",
+      "Dangerous goods certified",
+      "Priority urgent shipments",
+    ],
+    benefits: [
+      { title: "Speed", desc: "Fastest method for urgent deliveries" },
+      { title: "Security", desc: "Enhanced measures for valuable cargo" },
+      { title: "Flexibility", desc: "Multiple daily flights available" },
+    ],
+  },
+  {
+    image: "/clearance.png",
+    title: "Customs Clearance",
+    description:
+      "Expert customs brokerage services to navigate complex regulations. We handle all documentation and compliance requirements for smooth border crossings and minimal delays.",
+    features: [
+      "Import/export documentation",
+      "Duty and tax calculations",
+      "Compliance consulting",
+      "Electronic lodgement systems",
+    ],
+    benefits: [
+      { title: "Compliance", desc: "All regulations met correctly" },
+      { title: "Efficiency", desc: "Minimised delays and processing time" },
+      { title: "Cost Savings", desc: "Optimised duty obligations" },
+    ],
+  },
+  {
+    image: "/carExport.jpg",
+    title: "Vehicle Import Services",
+    description:
+      "Specialised vehicle importation including compliance, registration, and delivery. We handle cars, motorcycles, and commercial vehicles with expert knowledge of Australian regulations.",
+    features: [
+      "Compliance certification",
+      "SEVS and RAV processing",
+      "Registration assistance",
+      "Door-to-door delivery",
+    ],
+    benefits: [
+      { title: "Expertise", desc: "Deep regulatory knowledge" },
+      { title: "End-to-End", desc: "Purchase to registration service" },
+      { title: "Peace of Mind", desc: "Full legal compliance" },
+    ],
+  },
+  {
+    image: "/logitic.jpg",
+    title: "FMCG Logistics",
+    description:
+      "Fast-moving consumer goods logistics with specialised handling and distribution. Our solutions ensure products reach retailers efficiently with quality maintained throughout.",
+    features: [
+      "Temperature-controlled storage",
+      "Inventory management",
+      "Last-mile delivery",
+      "Retail distribution networks",
+    ],
+    benefits: [
+      { title: "Speed to Market", desc: "Rapid retail distribution" },
+      { title: "Quality Control", desc: "Product integrity maintained" },
+      { title: "Scalability", desc: "Flexible seasonal solutions" },
+    ],
+  },
+  {
+    image: "/meatlogistic.jpg",
+    title: "Meat Export & Trading",
+    description:
+      "Specialised meat export with strict temperature control and international food safety compliance. We ensure quality from farm to table with complete cold chain management.",
+    features: [
+      "Cold chain management",
+      "HACCP compliance",
+      "Export certification",
+      "Reefer container services",
+    ],
+    benefits: [
+      { title: "Quality Assurance", desc: "Maintained cold chain compliance" },
+      { title: "Certification", desc: "Full export documentation" },
+      { title: "Global Reach", desc: "Major international markets" },
+    ],
+  },
+];
+
+export default function ServicesPage() {
   return (
-    <section className="@container m-auto mt-40 mb-30 flex max-w-[90%] flex-col items-center justify-center gap-10">
-      <Card className="bg-card flex max-w-[500px] px-2 py-8 md:max-w-[900px] md:flex-row">
-        <CardContent className="flex flex-col gap-5 md:max-w-[60%]">
-          <div className="text-[50px]">🚢</div>
-          <h1 className="text-foreground text-2xl font-semibold @[450]:text-3xl">
-            Sea Freight Services
+    <section className="mt-40 mb-20">
+      {/* Header */}
+      <div className="mx-auto mb-20 max-w-3xl px-4 text-center">
+        <div className="m-auto mb-4 w-fit">
+          <h1 className="text-foreground text-4xl font-bold md:text-5xl">
+            Our Services
           </h1>
-          <p className="text-sm @[450]:text-[16px]">
-            Orrsman Group&apos;s ocean freight services provide cost-effective
-            solutions for businesses looking to transport goods internationally.
-            We handle both Full Container Load (FCL) and Less than Container
-            Load (LCL) shipments.
-          </p>
-          <ul className="space-y-2 text-sm @[450]:text-[16px]">
-            <li>✓ FCL (Full Container Load) services</li>
-            <li>✓ LCL (Less than Container Load) consolidation</li>
-            <li>✓ Door-to-door delivery options</li>
-            <li>✓ Real-time cargo tracking</li>
-            <li>✓ Competitive freight rates</li>
-            <li>✓ Worldwide port coverage</li>
-          </ul>
-        </CardContent>
-        <CardContent>
-          <Card className="bg-muted w-[280px] p-5">
-            <CardTitle>
-              <h1 className="text-[17px]">Why Choose Our Sea Freight?</h1>
-            </CardTitle>
-            <div>
-              <strong className="text-primary">Cost Effective</strong>
-              <p className="text-sm">
-                Most economical option for large volume shipments
-              </p>
-            </div>
-            <div>
-              <strong className="text-primary sm">Reliable Transit</strong>
-              <p className="text-sm">
-                Established shipping schedules with trusted carriers
-              </p>
-            </div>
-            <div>
-              <strong className="text-primary">Global Network</strong>
-              <p className="text-sm">Access to major ports worldwide</p>
-            </div>
-          </Card>
-        </CardContent>
-      </Card>
-      {/* AIR FREIGHT */}
-      <Card className="bg-card flex max-w-[500px] px-2 py-8 md:max-w-[900px] md:flex-row">
-        <CardContent className="flex flex-col gap-5 md:max-w-[60%]">
-          <div className="text-[50px]">✈️</div>
-          <h1 className="text-foreground text-2xl font-semibold @[450]:text-3xl">
-            Air Freight Services
-          </h1>
-          <p className="text-sm @[450]:text-[16px]">
-            Fast and reliable air cargo services for time-sensitive shipments.
-            Orrsman Group&apos;s air freight solutions ensure your goods reach
-            their destination quickly and safely.
-          </p>
-          <ul className="space-y-2 text-sm @[450]:text-[16px]">
-            <li>✓ Express and standard air freight options</li>
-            <li>✓ Temperature-controlled cargo handling</li>
-            <li>✓ Dangerous goods certification</li>
-            <li>✓ Airport-to-airport and door-to-door services</li>
-            <li>✓ 24/7 cargo monitoring</li>
-            <li>✓ Priority handling for urgent shipments</li>
-          </ul>
-        </CardContent>
-        <CardContent>
-          <Card className="bg-muted w-[280px] p-5">
-            <CardTitle>
-              <h1 className="text-[17px]">Why Choose Our Sea Freight?</h1>
-            </CardTitle>
-            <div>
-              <strong className="text-primary">Speed</strong>
-              <p className="text-sm">
-                Fastest shipping method for urgent deliveries
-              </p>
-            </div>
-            <div>
-              <strong className="text-primary">Security</strong>
-              <p className="text-sm">
-                Enhanced security measures for valuable cargo
-              </p>
-            </div>
-            <div>
-              <strong className="text-primary">Flexibility</strong>
-              <p className="text-sm">
-                Multiple daily flights to major destinations
-              </p>
-            </div>
-          </Card>
-        </CardContent>
-      </Card>
+          <div className="bg-primary h-1"></div>
+        </div>
 
-      {/* CUSTOMS CLEARANCE */}
-      <Card className="bg-card flex max-w-[500px] px-2 py-8 md:max-w-[900px] md:flex-row">
-        <CardContent className="flex flex-col gap-5 md:max-w-[60%]">
-          <div className="text-[50px]">📋</div>
-          <h1 className="text-foreground text-2xl font-semibold @[450]:text-3xl">
-            Customs Clearance
-          </h1>
-          <p className="text-sm @[450]:text-[16px]">
-            Navigate complex customs regulations with Orrsman Group&apos;s
-            expert brokerage services. We handle all documentation and
-            compliance requirements for smooth border crossings.
-          </p>
-          <ul className="space-y-2 text-sm @[450]:text-[16px]">
-            <li>✓ Import and export documentation</li>
-            <li>✓ Duty and tax calculations</li>
-            <li>✓ Compliance consulting</li>
-            <li>✓ Quarantine and inspection coordination</li>
-            <li>✓ Electronic lodgement systems</li>
-            <li>✓ Permit and licence applications</li>
-          </ul>
-        </CardContent>
-        <CardContent>
-          <Card className="bg-muted w-[280px] p-5">
-            <CardTitle>
-              <h1 className="text-[17px]">Why Choose Our Sea Freight?</h1>
-            </CardTitle>
-            <div>
-              <strong className="text-primary">Compliance</strong>
-              <p className="text-sm">
-                Ensure all regulations are met correctly
-              </p>
-            </div>
-            <div>
-              <strong className="text-primary">Efficiency</strong>
-              <p className="text-sm">Minimise delays and processing time</p>
-            </div>
-            <div>
-              <strong className="text-primary">Cost Savings</strong>
-              <p className="text-sm">Optimise duty and tax obligations</p>
-            </div>
-          </Card>
-        </CardContent>
-      </Card>
+        <p className="text-lg text-gray-600">
+          Comprehensive logistics solutions tailored to your business needs
+        </p>
+      </div>
 
-      {/* VEHICLE IMPORTS */}
-      <Card className="bg-card flex max-w-[500px] px-2 py-8 md:max-w-[900px] md:flex-row">
-        <CardContent className="flex flex-col gap-5 md:max-w-[60%]">
-          <div className="text-[50px]">🚗</div>
-          <h1 className="text-foreground text-2xl font-semibold @[450]:text-3xl">
-            Vehicle Import Services
-          </h1>
-          <p className="text-sm @[450]:text-[16px]">
-            Specialised vehicle importation services including compliance,
-            registration, and delivery. Orrsman Group handles cars, motorcycles,
-            and commercial vehicles with expertise.
-          </p>
-          <ul className="space-y-2 text-sm @[450]:text-[16px]">
-            <li>✓ Vehicle compliance certification</li>
-            <li>✓ SEVS applications</li>
-            <li>✓ RAV processing</li>
-            <li>✓ Quarantine inspection coordination</li>
-            <li>✓ Registration assistance</li>
-            <li>✓ Door-to-door vehicle delivery</li>
-          </ul>
-        </CardContent>
-        <CardContent>
-          <Card className="bg-muted w-[280px] p-5">
-            <CardTitle>
-              <h1 className="text-[17px]">Why Choose Our Sea Freight?</h1>
-            </CardTitle>
-            <div>
-              <strong className="text-primary">Expertise</strong>
-              <p className="text-sm">
-                Deep knowledge of Australian vehicle regulations
-              </p>
+      {/* Services */}
+      <div className="mx-auto max-w-[95%] space-y-20">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className={`flex flex-col ${
+              index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+            } items-center gap-8 lg:gap-12`}
+          >
+            {/* Image */}
+            <div className="w-full px-4 lg:w-1/2">
+              <div className="relative h-[300px] overflow-hidden rounded-[2px] shadow-xl md:h-[540px]">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
-            <div>
-              <strong className="text-primary">End-to-End</strong>
-              <p className="text-sm">
-                Complete service from purchase to registration
-              </p>
-            </div>
-            <div>
-              <strong className="text-primary">Peace of Mind</strong>
-              <p className="text-sm">Full compliance and legal certainty</p>
-            </div>
-          </Card>
-        </CardContent>
-      </Card>
 
-      {/* FMCG LOGISTICS */}
-      <Card className="bg-card flex max-w-[500px] px-2 py-8 md:max-w-[900px] md:flex-row">
-        <CardContent className="flex flex-col gap-5 md:max-w-[60%]">
-          <div className="text-[50px]">📦</div>
-          <h1 className="text-foreground text-2xl font-semibold @[450]:text-3xl">
-            FMCG Logistics
-          </h1>
-          <p className="text-sm @[450]:text-[16px]">
-            Fast-moving consumer goods require specialised handling and
-            distribution. Orrsman Group&apos;s FMCG logistics solutions ensure
-            products reach retailers efficiently.
-          </p>
-          <ul className="space-y-2 text-sm @[450]:text-[16px]">
-            <li>✓ Temperature-controlled storage</li>
-            <li>✓ Inventory management systems</li>
-            <li>✓ Cross-docking facilities</li>
-            <li>✓ Last-mile delivery solutions</li>
-            <li>✓ Retail distribution networks</li>
-            <li>✓ Product labelling and packaging</li>
-          </ul>
-        </CardContent>
-        <CardContent>
-          <Card className="bg-muted w-[280px] p-5">
-            <CardTitle>
-              <h1 className="text-[17px]">Why Choose Our Sea Freight?</h1>
-            </CardTitle>
-            <div>
-              <strong className="text-primary">Speed to Market</strong>
-              <p className="text-sm">Rapid distribution to retail channels</p>
-            </div>
-            <div>
-              <strong className="text-primary">Quality Control</strong>
-              <p className="text-sm">
-                Maintain product integrity throughout supply chain
+            {/* Content */}
+            <div className="border-foreground w-full max-w-[90%] space-y-6 border-b-2 pb-10 lg:w-1/2">
+              <h2 className="text-foreground text-3xl font-bold md:text-4xl">
+                {service.title}
+              </h2>
+              <p className="text-lg leading-relaxed text-gray-600">
+                {service.description}
               </p>
-            </div>
-            <div>
-              <strong className="text-primary">Scalability</strong>
-              <p className="text-sm">Flexible solutions for seasonal demands</p>
-            </div>
-          </Card>
-        </CardContent>
-      </Card>
 
-      {/* MEAT EXPORT */}
-      <Card className="bg-card flex max-w-[500px] px-2 py-8 md:max-w-[900px] md:flex-row">
-        <CardContent className="flex flex-col gap-5 md:max-w-[60%]">
-          <div className="text-[50px]">🥩</div>
-          <h1 className="text-foreground text-2xl font-semibold @[450]:text-3xl">
-            Meat Export & Trading
-          </h1>
-          <p className="text-sm @[450]:text-[16px]">
-            Specialised meat export services with strict temperature control and
-            compliance with international food safety standards. Orrsman Group
-            ensures quality from farm to table.
-          </p>
-          <ul className="space-y-2 text-sm @[450]:text-[16px]">
-            <li>✓ Cold chain management</li>
-            <li>✓ HACCP compliance</li>
-            <li>✓ Export certification</li>
-            <li>✓ Halal and Kosher handling</li>
-            <li>✓ Veterinary health certificates</li>
-            <li>✓ Reefer container services</li>
-          </ul>
-        </CardContent>
-        <CardContent>
-          <Card className="bg-muted w-[280px] p-5">
-            <CardTitle>
-              <h1 className="text-[17px]">Why Choose Our Sea Freight?</h1>
-            </CardTitle>
-            <div>
-              <strong className="text-primary">Quality Assurance</strong>
-              <p className="text-sm">
-                Maintained cold chain and safety compliance
-              </p>
+              <div className="flex flex-col gap-5 sm:flex-row">
+                <div className="space-y-3">
+                  {service.features.map((feature, idx) => (
+                    <div key={idx} className="mt-5 flex items-start gap-3">
+                      <Check className="mt-1 h-5 w-5 shrink-0 text-blue-600" />
+                      <span className="text-gray-700">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Benefits */}
+                <Card className="w-fit border-0 bg-gray-50">
+                  <CardContent className="px-6">
+                    <CardTitle>
+                      <h3 className="text-foreground mb-4 text-lg font-bold">
+                        Key Benefits
+                      </h3>
+                    </CardTitle>
+                    <div className="space-y-4">
+                      {service.benefits.map((benefit, idx) => (
+                        <div key={idx}>
+                          <h4 className="text-primary mb-1 font-semibold">
+                            {benefit.title}
+                          </h4>
+                          <p className="text-sm text-gray-600">
+                            {benefit.desc}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <Button className="bg-primary px-8 py-3 hover:bg-blue-700">
+                Get a Quote
+              </Button>
             </div>
-            <div>
-              <strong className="text-primary">Certification</strong>
-              <p className="text-sm">
-                Full export and health documentation provided
-              </p>
-            </div>
-            <div>
-              <strong className="text-primary">Global Reach</strong>
-              <p className="text-sm">Shipping to major international markets</p>
-            </div>
-          </Card>
-        </CardContent>
-      </Card>
+          </div>
+        ))}
+      </div>
+
+      {/* CTA Section */}
+      <div className="mx-auto mt-24 max-w-4xl px-4">
+        <Card className="bg-primary border-0 shadow-xl">
+          <CardContent className="p-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-white">
+              Need a Custom Solution?
+            </h2>
+            <p className="mb-6 text-lg text-blue-100">
+              Our team can create tailored logistics solutions for your specific
+              requirements
+            </p>
+            <Button
+              variant="secondary"
+              size="lg"
+              className="text-primary bg-white hover:bg-gray-100"
+            >
+              Contact Our Team
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
     </section>
   );
 }

@@ -9,27 +9,20 @@ import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 
 interface ServiceCardProps {
-  icon: string;
   title: string;
   description: string;
 }
 
-export function ServiceCard({ icon, title, description }: ServiceCardProps) {
+export function ServiceCard({ title, description }: ServiceCardProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <Card className="flex h-full w-full max-w-sm flex-col justify-between rounded-2xl bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-md">
-        <CardHeader className="flex flex-col items-center space-y-3 text-center">
-          <div className="text-4xl text-[#7174f1]">{icon}</div>
-          <h2 className="text-foreground text-xl font-semibold">{title}</h2>
-        </CardHeader>
-
-        <CardContent className="flex-1 text-center">
-          <p className="text-secondary-foreground text-sm leading-relaxed md:text-base">
-            {description}
-          </p>
+      <Card className="overflow-hidden rounded-lg border-l-4 border-l-blue-600 bg-white shadow-md transition-all duration-300 hover:shadow-xl">
+        <CardContent className="px-6 pt-6 pb-6">
+          <h3 className="mb-3 text-xl font-bold text-gray-900">{title}</h3>
+          <p className="text-sm leading-relaxed text-gray-600">{description}</p>
         </CardContent>
       </Card>
     </motion.div>
