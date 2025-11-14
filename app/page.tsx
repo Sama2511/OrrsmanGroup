@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 
 import services from "@/lib/services";
 import HeroSection from "@/components/HeroSection";
+import Link from "next/link";
 export default function Home() {
   return (
     <div className="bg-background">
@@ -16,14 +17,28 @@ export default function Home() {
             and globally
           </p>
         </div>
-        <div className="m-auto grid max-w-[90%] grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-items-center gap-6 md:max-w-[1000px]">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <ServiceCard
+            <div
               key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-            />
+              className="border-primary relative border-l-4 py-6 pl-8 text-left transition-colors hover:border-blue-700"
+            >
+              <h3 className="mb-3 text-xl font-bold text-gray-900">
+                {service.title}
+              </h3>
+              <p className="mb-5 text-sm leading-relaxed text-gray-600">
+                {service.description}
+              </p>
+              <Link href="/services">
+                <Button
+                  variant="link"
+                  size="sm"
+                  className="text-secondary-foreground cursor-pointer text-sm font-semibold"
+                >
+                  Learn More →
+                </Button>
+              </Link>
+            </div>
           ))}
         </div>
       </section>
