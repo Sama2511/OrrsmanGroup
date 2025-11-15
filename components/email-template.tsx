@@ -1,8 +1,7 @@
 import * as React from "react";
 
 interface EmailTemplateProps {
-  firstName: string;
-  lastName: string;
+  fullName: string;
   email: string;
   phoneNumber: string;
   companyName: string;
@@ -13,8 +12,7 @@ interface EmailTemplateProps {
 }
 
 export function EmailTemplate({
-  firstName,
-  lastName,
+  fullName,
   email,
   phoneNumber,
   companyName,
@@ -36,7 +34,7 @@ export function EmailTemplate({
       </h1>
 
       <p>
-        <strong>Name:</strong> {firstName} {lastName}
+        <strong>Name:</strong> {fullName}
       </p>
       <p>
         <strong>Email:</strong> {email}

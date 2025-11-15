@@ -1,15 +1,10 @@
 import { z } from "zod";
 
 export const contactSchema = z.object({
-  firstName: z
+  fullName: z
     .string()
-    .min(1, "First name is required")
-    .min(3, "First name must be at least 3 characters"),
-
-  lastName: z
-    .string()
-    .min(1, "Last name is required")
-    .min(3, "Last name must be at least 3 characters"),
+    .min(1, "Your name is required")
+    .min(3, "Your name must be at least 3 characters"),
 
   email: z
     .email({ message: "Please enter a valid email address" })
@@ -43,14 +38,15 @@ export const contactSchema = z.object({
       10,
       "Please provide at least 10 characters describing your requirements",
     )
-    .max(1000, "Message must not exceed 1000 characters"),
-  serviceRequired: z.enum([
-    "Sea Freight",
-    "Air Freight",
-    "Customs Clearance",
-    "Vehicle Imports",
-    "FMCG Logistics",
-    "Meat Trading",
-    "Other / Multiple Services",
-  ]),
+    .max(500, "Message must not exceed 500 characters"),
+  // serviceRequired: z.enum([
+  //   "Sea Freight",
+  //   "Air Freight",
+  //   "Customs Clearance",
+  //   "Vehicle Imports",
+  //   "FMCG Logistics",
+  //   "Meat Trading",
+  //   "Other / Multiple Services",
+  // ]),
+  serviceRequired: z.string().min(1, "Please select a service"),
 });

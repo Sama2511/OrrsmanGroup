@@ -17,10 +17,9 @@ export async function POST(req: NextRequest) {
       from: "Acme <onboarding@resend.dev>",
       to: [process.env.RESEND_TO_EMAIL!],
       replyTo: validatedData.email,
-      subject: `New Contact Form Message from ${validatedData.firstName} ${validatedData.lastName}`,
+      subject: `New Contact Form Message from ${validatedData.fullName}`,
       react: EmailTemplate({
-        firstName: validatedData.firstName,
-        lastName: validatedData.lastName,
+        fullName: validatedData.fullName,
         email: validatedData.email,
         phoneNumber: validatedData.phoneNumber,
         companyName: validatedData.companyName,
