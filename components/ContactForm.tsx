@@ -49,10 +49,18 @@ export default function ContactForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) {
-        toast.error("Failed to send message. Please try again later.");
+        toast.error("Failed to send message. Please try again later.", {
+          style: {
+            background: "#e06356",
+          },
+        });
         return;
       }
-      toast.success("Message sent successfully!");
+      toast.success("Message sent successfully!", {
+        style: {
+          background: "#98c379",
+        },
+      });
       form.reset();
     } catch (error: any) {
       toast.error(`Something went wrong: ${error.message || error}`);

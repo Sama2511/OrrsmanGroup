@@ -39,6 +39,7 @@ export async function POST(req: NextRequest) {
     // console.error("❌ Send route error:", error);
 
     if (error instanceof Error) {
+      console.log(error);
       return NextResponse.json({ error: error.message }, { status: 400 });
     }
 
