@@ -29,7 +29,9 @@ export default function page() {
               </div>
               <div>
                 <h3 className="text-foreground font-semibold">Phone</h3>
-                <p className="text-secondary-foreground">+61 2 1234 5678</p>
+                <p className="text-secondary-foreground text-sm">
+                  +61 000 000 000
+                </p>
               </div>
             </div>
 
@@ -39,8 +41,8 @@ export default function page() {
               </div>
               <div>
                 <h3 className="text-foreground font-semibold">Email</h3>
-                <p className="text-secondary-foreground">
-                  support@ljmhospice.com.au
+                <p className="text-secondary-foreground text-[15px]">
+                  info@orrsmangroup.com
                 </p>
               </div>
             </div>
@@ -51,7 +53,7 @@ export default function page() {
               </div>
               <div>
                 <h3 className="text-foreground font-semibold">Address</h3>
-                <p className="text-secondary-foreground">
+                <p className="text-secondary-foreground text-[15px]">
                   707/289 King St Mascot NSW 2020
                 </p>
               </div>
@@ -65,7 +67,7 @@ export default function page() {
                 <h3 className="text-foreground font-semibold">
                   Business Hours
                 </h3>
-                <div className="text-secondary-foreground space-y-1">
+                <div className="text-secondary-foreground space-y-1 text-[15px]">
                   <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
                   <p>Saturday: 10:00 AM - 12:00 PM</p>
                 </div>
