@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
@@ -192,10 +193,14 @@ export default function ServicesPage() {
                   </CardContent>
                 </Card>
               </div>
-
-              <Button className="bg-primary px-8 py-3 hover:bg-blue-700">
-                Get a Quote
-              </Button>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="bg-primary cursor-pointer px-8 py-3"
+                >
+                  Get a Quote
+                </Button>
+              </Link>
             </div>
           </div>
         ))}
@@ -212,13 +217,11 @@ export default function ServicesPage() {
               Our team can create tailored logistics solutions for your specific
               requirements
             </p>
-            <Button
-              variant="secondary"
-              size="lg"
-              className="text-primary bg-white hover:bg-gray-100"
-            >
-              Contact Our Team
-            </Button>
+            <Link href="/contact">
+              <Button variant="secondary" size="lg" className="cursor-pointer">
+                Contact Our Team
+              </Button>
+            </Link>
           </CardContent>
         </Card>
       </div>

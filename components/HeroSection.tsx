@@ -16,7 +16,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-linear-to-b from-[#e7e5e4]/60 to-[#e7e5e4]/80"></div>
 
       <div className="relative z-10 max-w-3xl px-4 text-center md:px-10">
-        <h1 className="mb-6 text-3xl font-bold text-[#1e293b] md:text-5xl">
+        <h1 className="mb-6 text-3xl font-bold text-[#1e293b] md:text-5xl lg:text-6xl">
           Global Freight & Logistics Solutions
         </h1>
         <p className="mb-8 text-base text-[#1e293b]/80 md:text-lg">

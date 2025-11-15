@@ -6,20 +6,12 @@ import { useForm, Controller } from "react-hook-form";
 import { toast } from "sonner";
 import z from "zod";
 import { Card, CardContent, CardFooter } from "./ui/card";
-import {
-  Field,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-  FieldLegend,
-  FieldSet,
-} from "./ui/field";
+import { Field, FieldError, FieldGroup, FieldLabel } from "./ui/field";
 import { Input } from "./ui/input";
 import {
   Select,
   SelectContent,
   SelectGroup,
-  SelectLabel,
   SelectValue,
   SelectItem,
   SelectTrigger,
@@ -68,215 +60,230 @@ export default function ContactForm() {
   }
 
   return (
-    <>
-      <Card className="w-[700px]">
-        <CardContent>
-          <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)}>
-            <FieldGroup>
-              <Controller
-                name="fullName"
-                control={form.control}
-                render={({ field, fieldState }) => (
-                  <Field data-invalid={fieldState.invalid}>
-                    <FieldLabel htmlFor={field.name}>Full Name</FieldLabel>
-                    <Input
-                      {...field}
-                      id={field.name}
-                      placeholder="Joe Doe"
-                      autoComplete="given-name"
-                    />
-                    {fieldState.error && (
-                      <FieldError errors={[fieldState.error]} />
-                    )}
-                  </Field>
-                )}
-              />
-              <div className="flex gap-5">
-                <Controller
-                  name="email"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <FieldLabel htmlFor={field.name}>Email</FieldLabel>
-                      <Input
-                        {...field}
-                        id={field.name}
-                        placeholder="example@gmail.com"
-                        autoComplete="email"
-                      />
-                      {fieldState.error && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
+    <Card className="mx-auto h-fit max-w-[95%] md:max-w-[700px] md:min-w-[500px] lg:mx-0">
+      <CardContent>
+        <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)}>
+          <FieldGroup>
+            <Controller
+              name="fullName"
+              control={form.control}
+              render={({ field, fieldState }) => (
+                <Field data-invalid={fieldState.invalid}>
+                  <FieldLabel htmlFor={field.name} className="font-semibold">
+                    Full Name
+                  </FieldLabel>
+                  <Input
+                    {...field}
+                    id={field.name}
+                    placeholder="Joe Doe"
+                    autoComplete="given-name"
+                    className="transition-all duration-200 focus:scale-[1.01]"
+                  />
+                  {fieldState.error && (
+                    <FieldError errors={[fieldState.error]} />
                   )}
-                />
-                <Controller
-                  name="phoneNumber"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <FieldLabel htmlFor={field.name}>Phone Number</FieldLabel>
-                      <Input
-                        {...field}
-                        id={field.name}
-                        placeholder="1234567890"
-                        autoComplete="tel"
-                      />
-                      {fieldState.error && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
-                />
-              </div>
-
-              <Controller
-                name="companyName"
-                control={form.control}
-                render={({ field, fieldState }) => (
-                  <Field data-invalid={fieldState.invalid}>
-                    <FieldLabel htmlFor={field.name}>Company Name</FieldLabel>
-                    <Input
-                      {...field}
-                      id={field.name}
-                      placeholder="Company Inc."
-                    />
-                    {fieldState.error && (
-                      <FieldError errors={[fieldState.error]} />
-                    )}
-                  </Field>
-                )}
-              />
-              <div className="flex gap-5">
-                <Controller
-                  name="originCountryCity"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <FieldLabel htmlFor={field.name}>
-                        Origin Country/City
-                      </FieldLabel>
-                      <Input
-                        {...field}
-                        id={field.name}
-                        placeholder="e.g., Syndey, Australia"
-                        autoComplete="off"
-                      />
-                      {fieldState.error && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
-                />
-                <Controller
-                  name="destinationCountryCity"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <FieldLabel htmlFor={field.name}>
-                        Destination Country/City
-                      </FieldLabel>
-                      <Input
-                        {...field}
-                        id={field.name}
-                        placeholder="e.g., London, UK"
-                        autoComplete="off"
-                      />
-                      {fieldState.error && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
-                />
-              </div>
-
-              <Controller
-                name="serviceRequired"
-                control={form.control}
-                render={({ field, fieldState }) => (
-                  <Field data-invalid={fieldState.invalid}>
-                    <FieldLabel>Service Required</FieldLabel>
-                    <Select onValueChange={field.onChange} value={field.value}>
-                      <SelectTrigger className="w-[200px]">
-                        <SelectValue placeholder="Select a Service" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          <SelectItem value="Sea Freight">
-                            Sea Freight
-                          </SelectItem>
-                          <SelectItem value="Air Freight">
-                            Air Freight
-                          </SelectItem>
-                          <SelectItem value="Customs Clearance">
-                            Customs Clearance
-                          </SelectItem>
-                          <SelectItem value="Vehicle Imports">
-                            Vehicle Imports
-                          </SelectItem>
-                          <SelectItem value="FMCG Logistics">
-                            FMCG Logistics
-                          </SelectItem>
-                          <SelectItem value="Meat Trading">
-                            Meat Trading
-                          </SelectItem>
-                          <SelectItem value="Other / Multiple Services">
-                            Other / Multiple Services
-                          </SelectItem>
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
-                    {fieldState.error && (
-                      <FieldError errors={[fieldState.error]} />
-                    )}
-                  </Field>
-                )}
-              />
-              <Controller
-                name="message"
-                control={form.control}
-                render={({ field, fieldState }) => (
-                  <Field data-invalid={fieldState.invalid}>
-                    <FieldLabel htmlFor="message">Message</FieldLabel>
-                    <InputGroup>
-                      <InputGroupTextarea
-                        {...field}
-                        id="message"
-                        placeholder="Leave us a message..."
-                        rows={6}
-                        className="min-h-24"
-                        aria-invalid={fieldState.invalid}
-                      />
-                      <InputGroupAddon align="block-end">
-                        <InputGroupText>
-                          {field.value.length}/500 characters
-                        </InputGroupText>
-                      </InputGroupAddon>
-                    </InputGroup>
-                  </Field>
-                )}
-              />
-            </FieldGroup>
-          </form>
-        </CardContent>
-        <CardFooter>
-          <Field orientation="responsive">
-            <Button
-              type="submit"
-              form="contact-form"
-              disabled={form.formState.isSubmitting}
-            >
-              {form.formState.isSubmitting ? (
-                <>
-                  <Spinner /> <p>Sending</p>
-                </>
-              ) : (
-                "Send Message"
+                </Field>
               )}
-            </Button>
-          </Field>
-        </CardFooter>
-      </Card>
-    </>
+            />
+            <div className="flex flex-col gap-5 sm:flex-row">
+              <Controller
+                name="email"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor={field.name} className="font-semibold">
+                      Email
+                    </FieldLabel>
+                    <Input
+                      {...field}
+                      id={field.name}
+                      placeholder="example@gmail.com"
+                      autoComplete="email"
+                      className="transition-all duration-200 focus:scale-[1.01]"
+                    />
+                    {fieldState.error && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+              <Controller
+                name="phoneNumber"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor={field.name} className="font-semibold">
+                      Phone Number
+                    </FieldLabel>
+                    <Input
+                      {...field}
+                      id={field.name}
+                      placeholder="+61 000 000 000"
+                      autoComplete="tel"
+                      className="transition-all duration-200 focus:scale-[1.01]"
+                    />
+                    {fieldState.error && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+            </div>
+
+            <Controller
+              name="companyName"
+              control={form.control}
+              render={({ field, fieldState }) => (
+                <Field data-invalid={fieldState.invalid}>
+                  <FieldLabel htmlFor={field.name} className="font-semibold">
+                    Company Name
+                  </FieldLabel>
+                  <Input
+                    {...field}
+                    id={field.name}
+                    placeholder="Company Inc."
+                    className="transition-all duration-200 focus:scale-[1.01]"
+                  />
+                  {fieldState.error && (
+                    <FieldError errors={[fieldState.error]} />
+                  )}
+                </Field>
+              )}
+            />
+            <div className="flex flex-col gap-5 sm:flex-row">
+              <Controller
+                name="originCountryCity"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor={field.name} className="font-semibold">
+                      Origin Country/City
+                    </FieldLabel>
+                    <Input
+                      {...field}
+                      id={field.name}
+                      placeholder="e.g., Syndey, Australia"
+                      autoComplete="off"
+                      className="transition-all duration-200 focus:scale-[1.01]"
+                    />
+                    {fieldState.error && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+              <Controller
+                name="destinationCountryCity"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor={field.name} className="font-semibold">
+                      Destination Country/City
+                    </FieldLabel>
+                    <Input
+                      {...field}
+                      id={field.name}
+                      placeholder="e.g., London, UK"
+                      autoComplete="off"
+                      className="transition-all duration-200 focus:scale-[1.01]"
+                    />
+                    {fieldState.error && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+            </div>
+
+            <Controller
+              name="serviceRequired"
+              control={form.control}
+              render={({ field, fieldState }) => (
+                <Field data-invalid={fieldState.invalid}>
+                  <FieldLabel
+                    className="font-semibold"
+                    htmlFor="serviceRequired"
+                  >
+                    Service Required
+                  </FieldLabel>
+                  <Select onValueChange={field.onChange} value={field.value}>
+                    <SelectTrigger className="w-[200px]">
+                      <SelectValue placeholder="Select a Service" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectItem value="Sea Freight">Sea Freight</SelectItem>
+                        <SelectItem value="Air Freight">Air Freight</SelectItem>
+                        <SelectItem value="Customs Clearance">
+                          Customs Clearance
+                        </SelectItem>
+                        <SelectItem value="Vehicle Imports">
+                          Vehicle Imports
+                        </SelectItem>
+                        <SelectItem value="FMCG Logistics">
+                          FMCG Logistics
+                        </SelectItem>
+                        <SelectItem value="Meat Trading">
+                          Meat Trading
+                        </SelectItem>
+                        <SelectItem value="Other / Multiple Services">
+                          Other / Multiple Services
+                        </SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                  {fieldState.error && (
+                    <FieldError errors={[fieldState.error]} />
+                  )}
+                </Field>
+              )}
+            />
+            <Controller
+              name="message"
+              control={form.control}
+              render={({ field, fieldState }) => (
+                <Field data-invalid={fieldState.invalid}>
+                  <FieldLabel htmlFor="message" className="font-semibold">
+                    Message
+                  </FieldLabel>
+                  <InputGroup>
+                    <InputGroupTextarea
+                      {...field}
+                      id="message"
+                      placeholder="Leave us a message..."
+                      rows={6}
+                      aria-invalid={fieldState.invalid}
+                      className="min-h-24 transition-all duration-200 focus:scale-[1.01]"
+                    />
+                    <InputGroupAddon align="block-end">
+                      <InputGroupText>
+                        {field.value.length}/500 characters
+                      </InputGroupText>
+                    </InputGroupAddon>
+                  </InputGroup>
+                </Field>
+              )}
+            />
+          </FieldGroup>
+        </form>
+      </CardContent>
+      <CardFooter>
+        <Field orientation="responsive">
+          <Button
+            type="submit"
+            form="contact-form"
+            disabled={form.formState.isSubmitting}
+          >
+            {form.formState.isSubmitting ? (
+              <>
+                <Spinner /> <p>Sending</p>
+              </>
+            ) : (
+              "Send Message"
+            )}
+          </Button>
+        </Field>
+      </CardFooter>
+    </Card>
   );
 }

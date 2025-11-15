@@ -88,16 +88,16 @@ export default function Home() {
                   </div>
                 </li>
               </ul>
-
-              <Button
-                variant="outline"
-                className="px-8 py-6 text-base font-semibold"
-              >
-                Learn More
-              </Button>
+              <Link href="/about">
+                <Button
+                  variant="outline"
+                  className="cursor-pointer px-8 py-6 text-base font-semibold"
+                >
+                  Learn More
+                </Button>
+              </Link>
             </div>
 
-            {/* Right Image */}
             <div className="hidden flex-1 justify-center lg:flex">
               <img
                 src="/section3.png"
