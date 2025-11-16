@@ -1,16 +1,28 @@
+"use client";
 import ContactForm from "@/components/ContactForm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import React from "react";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function page() {
   return (
     <div className="my-50">
-      <div className="m-auto mb-15 w-fit">
-        <h1 className="text-center text-4xl font-bold md:text-5xl">
-          Contact Our Team
-        </h1>
-        <div className="bg-primary h-1"></div>
+      <div className="m-auto mb-10 w-fit">
+        <motion.h1
+          className="text-foreground text-4xl font-bold md:text-5xl"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Contact our Team
+        </motion.h1>
+        <motion.div
+          className="bg-primary h-1"
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        />
       </div>
 
       <div className="flex flex-col gap-20 lg:flex-row lg:justify-center">
