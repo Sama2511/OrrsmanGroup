@@ -62,23 +62,7 @@ const services = [
       { title: "Cost Savings", desc: "Optimised duty obligations" },
     ],
   },
-  {
-    image: "/carExport.jpg",
-    title: "Vehicle Import Services",
-    description:
-      "Specialised vehicle importation including compliance, registration, and delivery. We handle cars, motorcycles, and commercial vehicles with expert knowledge of Australian regulations.",
-    features: [
-      "Compliance certification",
-      "SEVS and RAV processing",
-      "Registration assistance",
-      "Door-to-door delivery",
-    ],
-    benefits: [
-      { title: "Expertise", desc: "Deep regulatory knowledge" },
-      { title: "End-to-End", desc: "Purchase to registration service" },
-      { title: "Peace of Mind", desc: "Full legal compliance" },
-    ],
-  },
+
   {
     image: "/logitic.jpg",
     title: "FMCG Logistics",

@@ -20,7 +20,6 @@ export default function Home() {
     <div className="bg-background">
       <HeroSection />
 
-      {/* Services Section */}
       <section ref={servicesRef}>
         <motion.div
           className="m-auto mt-50 mb-20 max-w-[90%] space-y-3 text-center md:mt-50"
