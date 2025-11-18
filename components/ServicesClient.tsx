@@ -97,7 +97,10 @@ function ServiceSection({
               </CardTitle>
               <div className="space-y-4">
                 {service.benefits.map(
-                  (benefit: { title: string; desc: string }, index: number) => (
+                  (
+                    benefit: { title: string; description: string },
+                    index: number,
+                  ) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 10 }}
@@ -107,7 +110,9 @@ function ServiceSection({
                       <h4 className="text-primary mb-1 font-semibold">
                         {benefit.title}
                       </h4>
-                      <p className="text-sm text-gray-600">{benefit.desc}</p>
+                      <p className="text-sm text-gray-600">
+                        {benefit.description}
+                      </p>
                     </motion.div>
                   ),
                 )}
