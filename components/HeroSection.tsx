@@ -3,7 +3,14 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
-export default function HeroSection() {
+import { SanityDocument } from "next-sanity";
+
+type HeroSectionProps = {
+  home: SanityDocument[];
+};
+
+export default function HeroSection(home: HeroSectionProps) {
+  console.log(home);
   return (
     <section className="relative flex h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-[#e7e5e4]">
       <Image
@@ -23,13 +30,11 @@ export default function HeroSection() {
           transition={{ duration: 1 }}
         >
           <h1 className="mb-6 text-3xl font-bold text-[#1e293b] md:text-5xl lg:text-6xl">
-            Global Freight & Logistics Solutions
+            {home.home[0].heroTitle}
           </h1>
         </motion.div>
         <p className="mb-8 text-base text-[#1e293b]/80 md:text-lg">
-          Connecting Australia to the world through reliable sea and air
-          freight, customs clearance, and specialised logistics services with
-          Orrsman Group
+          {home.home[0].heroSub}
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link href="/contact">

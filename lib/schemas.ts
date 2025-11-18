@@ -39,14 +39,6 @@ export const contactSchema = z.object({
       "Please provide at least 10 characters describing your requirements",
     )
     .max(500, "Message must not exceed 500 characters"),
-  // serviceRequired: z.enum([
-  //   "Sea Freight",
-  //   "Air Freight",
-  //   "Customs Clearance",
-  //   "Vehicle Imports",
-  //   "FMCG Logistics",
-  //   "Meat Trading",
-  //   "Other / Multiple Services",
-  // ]),
+
   serviceRequired: z.string().min(1, "Please select a service"),
 });

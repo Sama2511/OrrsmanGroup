@@ -4,12 +4,15 @@ import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { SanityDocument } from "next-sanity";
+import { Check } from "lucide-react";
+import { urlFor } from "@/lib/sanity";
 
 type HomeClientProps = {
   services: SanityDocument[];
+  home: SanityDocument[];
 };
 
-export function HomeClient({ services }: HomeClientProps) {
+export function HomeClient({ services, home }: HomeClientProps) {
   const servicesRef = useRef(null);
   const servicesInView = useInView(servicesRef, {
     once: true,
@@ -74,44 +77,39 @@ export function HomeClient({ services }: HomeClientProps) {
               transition={{ duration: 0.7 }}
             >
               <h1 className="text-foreground mb-6 text-4xl font-bold md:text-4xl">
-                Trusted Logistics Partner
+                {home[0].bottomTitle}
               </h1>
               <p className="mb-12 text-lg leading-relaxed text-gray-600">
-                Orrsman Group International Logistics (OG) is a leading
-                Australian freight forwarder with extensive experience in
-                international trade. We provide end-to-end logistics solutions
-                that connect Australian businesses to global markets.
+                {home[0].bottomSubtitle}
               </p>
 
               <div className="lg:hidden">
                 <img
-                  src="/section4.png"
+                  src={urlFor(home[0].bottomImage).url()}
                   alt="Logistics"
                   className="w-full max-w-md lg:max-w-lg"
                 />
               </div>
 
               <ul className="mb-10 flex gap-8 md:gap-12">
-                {[
-                  { number: "15+", label: "Years Experience" },
-                  { number: "50+", label: "Countries Served" },
-                  { number: "1000+", label: "Happy Clients" },
-                ].map((stat, index) => (
-                  <motion.li
-                    key={index}
-                    className="text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={trustedInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  >
-                    <div className="text-primary mb-2 text-4xl font-bold md:text-5xl">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm font-semibold tracking-wider text-gray-600 uppercase md:text-base">
-                      {stat.label}
-                    </div>
-                  </motion.li>
-                ))}
+                {home[0].stats?.map(
+                  (stat: { number: string; label: string }, index: number) => (
+                    <motion.li
+                      key={index}
+                      className="text-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={trustedInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    >
+                      <div className="text-primary mb-2 text-4xl font-bold md:text-5xl">
+                        {stat.number}+
+                      </div>
+                      <div className="text-sm font-semibold tracking-wider text-gray-600 uppercase md:text-base">
+                        {stat.label}
+                      </div>
+                    </motion.li>
+                  ),
+                )}
               </ul>
 
               <Link href="/about">
@@ -131,7 +129,7 @@ export function HomeClient({ services }: HomeClientProps) {
               transition={{ duration: 0.7 }}
             >
               <img
-                src="/section3.png"
+                src={urlFor(home[0].bottomImage).url()}
                 alt="Logistics"
                 className="w-full max-w-md lg:max-w-lg"
               />
