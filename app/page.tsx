@@ -1,4 +1,3 @@
-// NO "use client" - this stays a server component
 import briefServices from "@/actions/services";
 import HeroSection from "@/components/HeroSection";
 import { HomeClient } from "@/components/HomeClient";
