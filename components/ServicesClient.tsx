@@ -135,7 +135,7 @@ function ServiceSection({
   );
 }
 
-export function ServicesClient({ services }: SanityDocument) {
+export function ServicesClient({ services }: { services: SanityDocument[] }) {
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, { once: true });
   const ctaRef = useRef(null);
