@@ -10,24 +10,25 @@ export default function Header() {
   const pathname = usePathname();
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
     { name: "About us", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Terms and Conditions", href: "/terms" },
     { name: "Contact us", href: "/contact" },
   ];
   const isActive = (path: string) => pathname === path;
 
   return (
     <nav
-      className={`bg-card/20 fixed top-0 left-1/2 z-50 mt-7 flex w-11/12 max-w-7xl -translate-x-1/2 flex-col justify-center border-2 py-5 backdrop-blur-lg md:rounded-full ${isOpen ? "rounded-sm" : "rounded-full"}`}
+      className={`bg-card/20 fixed top-0 left-1/2 z-50 mt-7 flex w-11/12 max-w-7xl -translate-x-1/2 flex-col justify-center border-2 py-2 backdrop-blur-lg md:rounded-full ${isOpen ? "rounded-sm" : "rounded-full"}`}
     >
       <div className="flex items-center justify-between">
         <div className="mx-10 flex w-full items-center justify-between">
           <Link href="/">
             <Image
-              src="/LogoOG2.png"
+              src="/LogoNoBg.png"
               alt="logo"
-              width={40}
-              height={40}
+              width={50}
+              height={50}
               className="cursor-pointer"
             />
           </Link>
