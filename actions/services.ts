@@ -4,7 +4,7 @@ import { SanityDocument } from "next-sanity";
 export async function briefServices() {
   const POSTS_QUERY = `*[_type == "service"]{
         title,
-        briefDescription,
+        description,
         }`;
   const options = { next: { revalidate: 30 } };
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
