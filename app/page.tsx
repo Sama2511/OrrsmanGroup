@@ -1,17 +1,30 @@
-import { briefServices, AirService, HomeInfo } from "@/actions/services";
-import ExpressAir from "@/components/ExpressAir";
+import { briefServices, HomeInfo } from "@/actions/services";
+import Services from "@/components/Services";
 import HeroSection from "@/components/HeroSection";
-import { HomeClient } from "@/components/HomeClient";
+import ImageBanner from "@/components/ImageBanner";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description:
+    "Orrsman Express Group - Your trusted partner for international logistics. We offer air freight, sea freight, customs clearance, and comprehensive supply chain solutions for Australian businesses expanding globally.",
+  openGraph: {
+    title:
+      "Orrsman Express Group | International Logistics & Freight Solutions",
+    description:
+      "Your trusted partner for international logistics. Expert air freight, sea freight, customs clearance, and supply chain solutions for Australian businesses.",
+    images: ["/OpenGraphImage.png"],
+  },
+};
 
 export default async function Home() {
   const services = await briefServices();
-  const expressAir = await AirService();
   const home = await HomeInfo();
   return (
     <div className="bg-background">
       <HeroSection home={home} />
-      <ExpressAir expressAir={expressAir} />
-      <HomeClient services={services} home={home} />
+      <ImageBanner />
+      <Services services={services} />
     </div>
   );
 }
