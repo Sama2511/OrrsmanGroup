@@ -59,30 +59,13 @@ export default function Services({ services }: { services: SanityDocument[] }) {
               </div>
 
               <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10 lg:p-12">
-                <motion.h2
-                  className="mb-4 text-2xl font-bold text-white drop-shadow-lg md:text-3xl lg:text-4xl"
-                  initial={{ x: -20, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 + 0.1 }}
-                >
+                <h2 className="mb-4 text-2xl font-bold text-white drop-shadow-lg md:text-3xl lg:text-4xl">
                   {service.title}
-                </motion.h2>
-                <motion.p
-                  className="mb-6 line-clamp-3 text-base leading-relaxed text-white/95 drop-shadow-md md:text-lg lg:max-w-[80%]"
-                  initial={{ x: -20, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 + 0.1 }}
-                >
+                </h2>
+                <p className="mb-6 line-clamp-3 text-base leading-relaxed text-white/95 drop-shadow-md md:text-lg lg:max-w-[80%]">
                   {service.description}
-                </motion.p>
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 + 0.5 }}
-                >
+                </p>
+                <div>
                   <Link href="/services">
                     <Button
                       variant="default"
@@ -92,7 +75,7 @@ export default function Services({ services }: { services: SanityDocument[] }) {
                       Learn More →
                     </Button>
                   </Link>
-                </motion.div>
+                </div>
               </div>
             </motion.li>
           );

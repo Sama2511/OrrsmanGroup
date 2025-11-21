@@ -38,14 +38,14 @@ export default function HeroSection(home: HeroSectionProps) {
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link href="/contact">
-            <Button className="bg-primary px-10 py-6 text-base font-semibold transition md:text-lg">
+            <Button className="bg-primary px-10 py-6 text-base transition md:text-lg">
               Get Quote
             </Button>
           </Link>
           <Link href="/services">
             <Button
               variant="outline"
-              className="bg-secondary border-none px-8 py-6 text-base font-semibold text-[#1e293b] transition md:text-lg"
+              className="bg-secondary border-none px-8 py-6 text-base text-[#1e293b] transition md:text-lg"
             >
               Our Services
             </Button>
