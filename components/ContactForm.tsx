@@ -234,9 +234,13 @@ export default function ContactForm() {
                         <SelectItem value="Meat Trading">
                           Meat Trading
                         </SelectItem>
-                        <SelectItem value="Other / Multiple Services">
-                          Other / Multiple Services
+                        <SelectItem value="Cartage Transport">
+                          Cartage Transport
                         </SelectItem>
+                        <SelectItem value="Warehouse & Storage">
+                          Warehouse & Storage
+                        </SelectItem>
+                        <SelectItem value="Other">Other</SelectItem>
                       </SelectGroup>
                     </SelectContent>
                   </Select>
