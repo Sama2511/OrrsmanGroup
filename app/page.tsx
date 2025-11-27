@@ -2,6 +2,7 @@ import { briefServices, HomeInfo } from "@/actions/services";
 import Services from "@/components/Services";
 import HeroSection from "@/components/HeroSection";
 import ImageBanner from "@/components/ImageBanner";
+import Testimonials from "@/components/Testimonials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,10 +22,11 @@ export default async function Home() {
   const services = await briefServices();
   const home = await HomeInfo();
   return (
-    <div className="bg-background">
+    <div className="bg-[#edebe9]">
       <HeroSection home={home} />
       <ImageBanner />
       <Services services={services} />
+      {/* <Testimonials /> */}
     </div>
   );
 }

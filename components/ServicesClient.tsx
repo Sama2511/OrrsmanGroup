@@ -50,7 +50,7 @@ function ServiceSection({
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
       >
         <motion.h2
-          className="text-foreground text-3xl font-bold md:text-4xl"
+          className="text-foreground font-outfit text-3xl font-semibold md:text-4xl"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -59,7 +59,7 @@ function ServiceSection({
         </motion.h2>
 
         <motion.p
-          className="text-lg leading-relaxed text-gray-600"
+          className="font-switzer text-lg leading-relaxed text-gray-600"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -83,7 +83,7 @@ function ServiceSection({
                 transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
               >
                 <Check className="mt-1 h-5 w-5 shrink-0 text-blue-600" />
-                <span className="text-gray-700">{feature}</span>
+                <span className="font-switzer text-gray-700">{feature}</span>
               </motion.div>
             ))}
           </div>
@@ -91,7 +91,7 @@ function ServiceSection({
           <Card className="w-fit border-0 bg-gray-50">
             <CardContent className="px-6">
               <CardTitle>
-                <h3 className="text-foreground mb-4 text-lg font-bold">
+                <h3 className="text-foreground font-outfit mb-4 text-lg font-bold">
                   Key Benefits
                 </h3>
               </CardTitle>
@@ -107,10 +107,10 @@ function ServiceSection({
                       animate={isInView ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
                     >
-                      <h4 className="text-primary mb-1 font-semibold">
+                      <h4 className="text-primary font-outfit mb-1 font-semibold">
                         {benefit.title}
                       </h4>
-                      <p className="text-sm text-gray-600">
+                      <p className="font-switzer text-sm text-gray-600">
                         {benefit.description}
                       </p>
                     </motion.div>
@@ -157,7 +157,7 @@ export function ServicesClient({ services }: { services: SanityDocument[] }) {
       >
         <div className="m-auto mb-4 w-fit">
           <motion.h1
-            className="text-foreground text-4xl font-bold md:text-5xl"
+            className="text-foreground font-outfit text-4xl font-semibold md:text-5xl"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={headerInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -173,7 +173,7 @@ export function ServicesClient({ services }: { services: SanityDocument[] }) {
         </div>
 
         <motion.p
-          className="text-lg text-gray-600"
+          className="font-switzer text-lg text-gray-600"
           initial={{ opacity: 0, y: 20 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
@@ -198,7 +198,7 @@ export function ServicesClient({ services }: { services: SanityDocument[] }) {
         <Card className="bg-primary border-0 shadow-xl">
           <CardContent className="p-12 text-center">
             <motion.h2
-              className="mb-4 text-3xl font-bold text-white"
+              className="font-outfit mb-4 text-3xl font-bold text-white"
               initial={{ opacity: 0, y: 20 }}
               animate={ctaInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -206,7 +206,7 @@ export function ServicesClient({ services }: { services: SanityDocument[] }) {
               Need a Custom Solution?
             </motion.h2>
             <motion.p
-              className="mb-6 text-lg text-blue-100"
+              className="font-switzer mb-6 text-lg text-blue-100"
               initial={{ opacity: 0, y: 20 }}
               animate={ctaInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 }}

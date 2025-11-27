@@ -10,7 +10,7 @@ export default function ContactClient() {
     <div className="my-50">
       <div className="m-auto mb-10 w-fit">
         <motion.h1
-          className="text-foreground text-4xl font-bold md:text-5xl"
+          className="text-foreground font-outfit text-4xl md:text-5xl"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -31,7 +31,7 @@ export default function ContactClient() {
         </div>
         <Card className="m-auto h-fit w-fit max-w-[90%] lg:m-0">
           <CardHeader>
-            <CardTitle className="text-xl">Get In Touch</CardTitle>
+            <CardTitle className="font-outfit text-xl">Get In Touch</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             {/* Phone */}

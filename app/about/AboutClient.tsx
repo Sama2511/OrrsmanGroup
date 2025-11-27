@@ -51,7 +51,7 @@ export default function AboutClient({ data }: AboutClientProps) {
                 transition={{ duration: 0.6, delay: 0.3 }}
               />
             </div>
-            <p className="leading-relaxed text-gray-600 lg:max-w-[90%]">
+            <p className="font-switzer leading-relaxed text-gray-600 lg:max-w-[90%]">
               {data.description}
             </p>
           </motion.div>
@@ -128,16 +128,16 @@ export default function AboutClient({ data }: AboutClientProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div>
-              <h1 className="text-3xl text-[#1e293b]">Our Mission</h1>
-              <p className="mt-2 text-[#475569]">
-                {data.mission}
-              </p>
+              <h1 className="font-outfit text-3xl text-[#1e293b]">
+                Our Mission
+              </h1>
+              <p className="font-switzer mt-2 text-[#475569]">{data.mission}</p>
             </div>
             <div>
-              <h1 className="text-3xl text-[#1e293b]">Our Vision</h1>
-              <p className="mt-2 text-[#475569]">
-                {data.vision}
-              </p>
+              <h1 className="font-outfit text-3xl text-[#1e293b]">
+                Our Vision
+              </h1>
+              <p className="font-switzer mt-2 text-[#475569]">{data.vision}</p>
             </div>
           </motion.div>
         </div>

@@ -28,17 +28,15 @@ export default function Services({ services }: { services: SanityDocument[] }) {
             transition={{ duration: 0.5 }}
           >
             <div>
-              <h1 className="text-foreground mb-3 text-3xl md:text-4xl lg:text-5xl">
+              <h1 className="text-foreground font-outfit mb-3 w-fit text-3xl font-semibold md:text-4xl lg:text-5xl">
                 Our Services
+                <span className="bg-primary block h-1 w-full"></span>
               </h1>
-              <p className="text-muted-foreground mb-5 text-base leading-relaxed md:text-lg">
+              <p className="text-muted-foreground font-switzer mb-5 text-base leading-relaxed md:text-lg">
                 Expert logistics solutions tailored to your business needs,
                 delivering efficiency and reliability across every mile.
               </p>
             </div>
-            <Link href="/services">
-              <Button className="">Learn More →</Button>
-            </Link>
           </motion.li>
 
           {services.map((service, index) => {
@@ -52,14 +50,15 @@ export default function Services({ services }: { services: SanityDocument[] }) {
               >
                 <Link href="/services">
                   <div className="bg-secondary group h-full rounded-[2px] border border-gray-200 p-8 shadow-md transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
-                    <h2 className="text-foreground mb-3 text-xl font-bold md:text-2xl">
+                    <h2 className="text-foreground font-outfit mb-3 text-xl font-medium md:text-2xl">
                       {service.title}
                     </h2>
-                    <p className="text-muted-foreground mb-6 line-clamp-3 text-sm leading-relaxed md:text-base">
+                    <p className="text-muted-foreground font-switzer mb-6 line-clamp-3 text-sm leading-relaxed md:text-base">
                       {service.description}
                     </p>
-                    <div className="flex items-center gap-2">
-                      <ArrowRight className="text-primary h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    <div className="flex items-center gap-2 underline">
+                      Learn More
+                      <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </div>
                   </div>
                 </Link>

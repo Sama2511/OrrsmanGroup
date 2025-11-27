@@ -10,7 +10,6 @@ type HeroSectionProps = {
 };
 
 export default function HeroSection(home: HeroSectionProps) {
-  console.log(home);
   return (
     <section className="relative flex h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-[#e7e5e4]">
       <Image
@@ -29,11 +28,11 @@ export default function HeroSection(home: HeroSectionProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="mb-6 text-3xl font-bold text-[#1e293b] md:text-5xl lg:text-6xl">
+          <h1 className="font-outfit mb-6 text-3xl font-semibold text-[#1e293b] md:text-5xl lg:text-6xl">
             {home.home[0].heroTitle}
           </h1>
         </motion.div>
-        <p className="mb-8 text-base text-[#1e293b]/80 md:text-lg">
+        <p className="font-switzer mb-8 text-base text-[#1e293b]/80 md:text-lg">
           {home.home[0].heroSub}
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
