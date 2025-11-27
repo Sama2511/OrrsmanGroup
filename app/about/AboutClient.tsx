@@ -2,8 +2,24 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { urlFor } from "@/lib/sanity";
 
-export default function AboutClient() {
+interface AboutData {
+  title: string;
+  description: string;
+  image1: any;
+  image2: any;
+  image3: any;
+  image4: any;
+  mission: string;
+  vision: string;
+}
+
+interface AboutClientProps {
+  data: AboutData;
+}
+
+export default function AboutClient({ data }: AboutClientProps) {
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, { once: true });
 
@@ -25,8 +41,8 @@ export default function AboutClient() {
             transition={{ duration: 0.6 }}
           >
             <div className="w-fit space-y-1">
-              <h1 className="text-3xl font-semibold sm:text-4xl md:text-5xl">
-                About Orrsman Group
+              <h1 className="font-cabinet text-3xl font-semibold sm:text-4xl md:text-5xl">
+                {data.title}
               </h1>
               <motion.div
                 className="bg-primary h-1"
@@ -36,19 +52,7 @@ export default function AboutClient() {
               />
             </div>
             <p className="leading-relaxed text-gray-600 lg:max-w-[90%]">
-              Orrsman Group International Logistics (OG) was founded with a
-              vision to bridge the gap between Australian businesses and global
-              markets. With over 15 years of experience in international trade
-              and logistics, we have built a reputation for reliability,
-              expertise, and exceptional customer service. Based in Sydney,
-              Orrsman Group serves clients across Australia and maintains strong
-              partnerships with logistics providers worldwide. Our deep
-              understanding of Australian import/export regulations, combined
-              with our global network, makes us the ideal partner for businesses
-              looking to expand internationally. From small family businesses to
-              large corporations, Orrsman Group tailors our services to meet the
-              unique needs of each client, ensuring their goods move efficiently
-              and cost-effectively across borders.
+              {data.description}
             </p>
           </motion.div>
 
@@ -59,36 +63,44 @@ export default function AboutClient() {
             animate={imagesInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <Image
-              src="/about2.jpg"
-              alt="picture of a box"
-              width={400}
-              height={350}
-              className="col-span-5 col-start-2 row-start-1 rounded-[4px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
-            />
-            <Image
-              src="/about1.jpg"
-              alt="picture of a box"
-              width={300}
-              height={250}
-              className="col-span-3 col-start-1 row-start-2 rounded-[4px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
-            />
-            <Image
-              src="/about3.jpg"
-              alt="picture of a box"
-              width={350}
-              height={300}
-              className="col-span-3 col-start-4 row-start-2 rounded-[4px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
-            />
+            {data.image2 && (
+              <Image
+                src={urlFor(data.image2).url()}
+                alt="Orrsman Group Logistics"
+                width={400}
+                height={350}
+                className="col-span-5 col-start-2 row-start-1 rounded-[4px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
+              />
+            )}
+            {data.image1 && (
+              <Image
+                src={urlFor(data.image1).url()}
+                alt="Orrsman Group Logistics"
+                width={300}
+                height={250}
+                className="col-span-3 col-start-1 row-start-2 rounded-[4px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
+              />
+            )}
+            {data.image3 && (
+              <Image
+                src={urlFor(data.image3).url()}
+                alt="Orrsman Group Logistics"
+                width={350}
+                height={300}
+                className="col-span-3 col-start-4 row-start-2 rounded-[4px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
+              />
+            )}
           </motion.div>
           <div className="sm:hidden">
-            <Image
-              src="/about3.jpg"
-              alt="picture of a box"
-              width={500}
-              height={400}
-              className="rounded-[2px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
-            />
+            {data.image3 && (
+              <Image
+                src={urlFor(data.image3).url()}
+                alt="Orrsman Group Logistics"
+                width={500}
+                height={400}
+                className="rounded-[2px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
+              />
+            )}
           </div>
         </div>
       </section>
@@ -99,37 +111,32 @@ export default function AboutClient() {
             animate={missionInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <Image
-              src="/about5.jpg"
-              width={500}
-              height={500}
-              className="h-full w-full rounded-[2px] object-cover"
-              alt="Orrsman Group Logistics"
-            />
+            {data.image4 && (
+              <Image
+                src={urlFor(data.image4).url()}
+                width={500}
+                height={500}
+                className="h-full w-full rounded-[2px] object-cover"
+                alt="Orrsman Group Logistics"
+              />
+            )}
           </motion.div>
           <motion.div
-            className="max-w-[500px] flex-1 space-y-6 text-center md:text-left"
+            className="max-w-[500px] flex-1 space-y-8 text-center md:text-left"
             initial={{ opacity: 0, x: 40 }}
             animate={missionInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div>
-              <h1 className="text-3xl font-bold text-[#1e293b]">Our Mission</h1>
+              <h1 className="text-3xl text-[#1e293b]">Our Mission</h1>
               <p className="mt-2 text-[#475569]">
-                To provide comprehensive, reliable, and cost-effective logistics
-                solutions that enable Australian businesses to compete
-                successfully in global markets whilst maintaining the highest
-                standards of service and compliance through Orrsman Group&apos;s
-                expertise.
+                {data.mission}
               </p>
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-[#1e293b]">Our Vision</h1>
+              <h1 className="text-3xl text-[#1e293b]">Our Vision</h1>
               <p className="mt-2 text-[#475569]">
-                To be Australia&apos;s most trusted international logistics
-                partner, known for our expertise, innovation, and commitment to
-                client success in connecting businesses to global opportunities
-                through Orrsman Group International Logistics.
+                {data.vision}
               </p>
             </div>
           </motion.div>
