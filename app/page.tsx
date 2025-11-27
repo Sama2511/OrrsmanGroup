@@ -26,7 +26,7 @@ export default async function Home() {
       <HeroSection home={home} />
       <ImageBanner />
       <Services services={services} />
-      {/* <Testimonials /> */}
+      <Testimonials />
     </div>
   );
 }

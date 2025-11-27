@@ -10,7 +10,7 @@ export default function Header() {
   const pathname = usePathname();
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About us", href: "/about" },
+    { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Terms and Conditions", href: "/terms" },
     { name: "Contact us", href: "/contact" },
@@ -32,12 +32,13 @@ export default function Header() {
               className="cursor-pointer"
             />
           </Link>
+          <Link href="/"></Link>
           <div className="text-foreground mr-10 hidden space-x-5 font-semibold md:block">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`hover:text-primary transition-colors ${
+                className={`hover:text-primary font-switzer transition-colors ${
                   isActive(link.href)
                     ? "text-primary border-primary border-b-2 pb-1"
                     : ""

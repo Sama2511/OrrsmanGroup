@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ImageBanner() {
   return (
-    <section className="relative mx-auto mt-20 mb-30 w-full max-w-[1600px] lg:h-[500px]">
+    <section className="bg-background relative mx-auto mt-20 mb-30 w-full max-w-[1600px] lg:h-[500px]">
       <div className="absolute inset-0">
         <Image
           src="/largeImage.jpg"

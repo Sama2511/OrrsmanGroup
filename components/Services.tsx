@@ -17,7 +17,7 @@ import { Button } from "./ui/button";
 
 export default function Services({ services }: { services: SanityDocument[] }) {
   return (
-    <section className="bg-background relative overflow-hidden py-20">
+    <section className="relative overflow-hidden py-20">
       <div className="mx-auto px-6 md:px-12 xl:max-w-[85%]">
         <ul className="grid gap-6 lg:grid-cols-2">
           <motion.li
