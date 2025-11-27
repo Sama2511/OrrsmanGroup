@@ -4,6 +4,8 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { SanityDocument } from "next-sanity";
+import { Input } from "./ui/input";
+import { Search } from "lucide-react";
 
 type HeroSectionProps = {
   home: SanityDocument[];
@@ -32,23 +34,37 @@ export default function HeroSection(home: HeroSectionProps) {
             {home.home[0].heroTitle}
           </h1>
         </motion.div>
-        <p className="font-switzer mb-8 text-base text-[#1e293b]/80 md:text-lg">
+        <p className="font-switzer font- mb-8 text-base text-[#1e293b]/80 md:text-lg">
           {home.home[0].heroSub}
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link href="/contact">
-            <Button className="bg-primary px-10 py-6 text-base transition md:text-lg">
+            <Button className="bg-primary cursor-pointer px-10 py-6 text-base transition md:text-lg">
               Get Quote
             </Button>
           </Link>
           <Link href="/services">
             <Button
               variant="outline"
-              className="bg-secondary border-none px-8 py-6 text-base text-[#1e293b] transition md:text-lg"
+              className="bg-secondary cursor-pointer border-none px-8 py-6 text-base text-[#1e293b] transition md:text-lg"
             >
               Our Services
             </Button>
           </Link>
+        </div>
+        <div className="bg-card/80 mt-8 w-full max-w-3xl rounded-2xl border-2 px-6 py-4 backdrop-blur-sm">
+          <h2 className="font-outfit mb-4 text-start text-xl font-semibold text-[#1e293b] md:text-2xl">
+            Track Your Shipment
+          </h2>
+          <div className="flex items-center gap-0">
+            <Input
+              className="bg-background h-12 flex-1 rounded-l-xl rounded-r-none border-r-0 text-base md:text-lg"
+              placeholder="Enter tracking number"
+            />
+            <Button className="font-outfit bg-secondary-foreground h-12 cursor-pointer rounded-l-none rounded-r-xl px-8 text-base md:text-lg">
+              Track
+            </Button>
+          </div>
         </div>
       </div>
     </section>

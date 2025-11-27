@@ -22,7 +22,7 @@ export default async function Home() {
   const services = await briefServices();
   const home = await HomeInfo();
   return (
-    <div className="bg-[#edebe9]">
+    <div>
       <HeroSection home={home} />
       <ImageBanner />
       <Services services={services} />

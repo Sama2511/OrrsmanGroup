@@ -41,7 +41,7 @@ export default function AboutClient({ data }: AboutClientProps) {
             transition={{ duration: 0.6 }}
           >
             <div className="w-fit space-y-1">
-              <h1 className="font-cabinet text-3xl font-semibold sm:text-4xl md:text-5xl">
+              <h1 className="font-outfit text-3xl font-semibold sm:text-4xl md:text-5xl">
                 {data.title}
               </h1>
               <motion.div
@@ -128,13 +128,13 @@ export default function AboutClient({ data }: AboutClientProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div>
-              <h1 className="font-outfit text-3xl text-[#1e293b]">
+              <h1 className="font-outfit text-3xl font-semibold text-[#1e293b]">
                 Our Mission
               </h1>
               <p className="font-switzer mt-2 text-[#475569]">{data.mission}</p>
             </div>
             <div>
-              <h1 className="font-outfit text-3xl text-[#1e293b]">
+              <h1 className="font-outfit text-3xl font-semibold text-[#1e293b]">
                 Our Vision
               </h1>
               <p className="font-switzer mt-2 text-[#475569]">{data.vision}</p>

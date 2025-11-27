@@ -1,9 +1,10 @@
 "use client";
-import { Menu } from "lucide-react";
+import { Menu, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 import { usePathname } from "next/navigation";
 export default function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
