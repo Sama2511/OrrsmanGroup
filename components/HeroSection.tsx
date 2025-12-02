@@ -13,7 +13,7 @@ type HeroSectionProps = {
 
 export default function HeroSection(home: HeroSectionProps) {
   return (
-    <section className="relative flex h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-[#e7e5e4]">
+    <section className="relative mt-10 flex h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-[#e7e5e4]">
       <Image
         src="/Homepageimage.png"
         alt="Global logistics illustration"

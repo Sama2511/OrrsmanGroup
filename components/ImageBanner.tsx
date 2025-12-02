@@ -21,7 +21,7 @@ export default function ImageBanner() {
             <h2 className="font-outfit mb-4 text-xl leading-tight font-semibold text-white md:text-2xl lg:text-5xl">
               Your Trusted Global Logistics Partner
             </h2>
-            <p className="font-switzer text-sm leading-relaxed font-thin text-white/95 md:text-lg">
+            <p className="font-switzer text-md leading-relaxed font-thin text-white/95 md:text-lg">
               Connecting Australian businesses to the world with reliable,
               cost-effective freight solutions. From air and sea freight to
               customs clearance and warehousing, we handle every aspect of your

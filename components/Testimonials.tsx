@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef } from "react";
 
 const StarIcon = () => (
   <Star className="size-4 fill-gray-800 text-gray-800" aria-hidden="true" />
@@ -32,6 +33,21 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 380;
+      const newScrollPosition =
+        scrollContainerRef.current.scrollLeft +
+        (direction === "left" ? -scrollAmount : scrollAmount);
+      scrollContainerRef.current.scrollTo({
+        left: newScrollPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section className="pt-20 pb-40">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
@@ -49,36 +65,62 @@ export default function Testimonials() {
           </h2>
         </motion.div>
 
-        <div className="mx-auto grid max-w-6xl grid-cols-1 justify-items-center gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              className="bg-popover grid w-full max-w-88 grid-rows-subgrid rounded-md border border-gray-200 p-6 text-gray-500 transition-all duration-300 hover:-translate-y-1"
-              style={{ gridRow: "span 3" }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+        <div>
+          <div
+            ref={scrollContainerRef}
+            className="mx-auto flex max-w-6xl snap-x snap-mandatory justify-items-center gap-6 overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] lg:grid lg:snap-none lg:grid-cols-3 lg:overflow-visible [&::-webkit-scrollbar]:hidden"
+          >
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className="bg-popover grid w-full max-w-88 min-w-[340px] shrink-0 snap-center grid-rows-subgrid rounded-md border border-gray-200 p-6 text-gray-500 transition-all duration-300 hover:-translate-y-1 md:min-w-0"
+                style={{ gridRow: "span 3" }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <StarIcon key={i} />
+                    ))}
+                  </div>
+                  <p className="text-sm">{testimonial.date}</p>
+                </div>
+
+                <p className="text-md mt-3 leading-relaxed md:mt-0">
+                  {testimonial.text}
+                </p>
+
+                <div className="flex items-center gap-3 border-t border-gray-200 pt-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 font-semibold text-gray-700">
+                    {getInitials(testimonial.name)}
+                  </div>
+                  <p className="font-medium text-gray-800">
+                    {testimonial.name}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex justify-center gap-4 md:hidden">
+            <button
+              onClick={() => scroll("left")}
+              className="rounded-full bg-white p-3 shadow-lg transition-all hover:bg-gray-100"
+              aria-label="Scroll left"
             >
-              <div className="flex items-center justify-between">
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <StarIcon key={i} />
-                  ))}
-                </div>
-                <p className="text-sm">{testimonial.date}</p>
-              </div>
-
-              <p className="text-sm leading-relaxed">{testimonial.text}</p>
-
-              <div className="flex items-center gap-3 border-t border-gray-200 pt-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 font-semibold text-gray-700">
-                  {getInitials(testimonial.name)}
-                </div>
-                <p className="font-medium text-gray-800">{testimonial.name}</p>
-              </div>
-            </motion.div>
-          ))}
+              <ChevronLeft className="h-6 w-6 text-gray-800" />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className="rounded-full bg-white p-3 shadow-lg transition-all hover:bg-gray-100"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="h-6 w-6 text-gray-800" />
+            </button>
+          </div>
         </div>
       </div>
     </section>

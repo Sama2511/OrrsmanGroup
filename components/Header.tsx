@@ -20,7 +20,7 @@ export default function Header() {
 
   return (
     <nav
-      className={`bg-card/20 fixed top-0 left-1/2 z-50 mt-7 flex w-11/12 max-w-7xl -translate-x-1/2 flex-col justify-center border-2 py-2 backdrop-blur-lg md:rounded-full ${isOpen ? "rounded-sm" : "rounded-full"}`}
+      className={`bg-card/40 fixed top-0 left-1/2 z-50 mt-7 flex w-11/12 max-w-7xl -translate-x-1/2 flex-col justify-center border-2 py-2 backdrop-blur-sm md:rounded-full ${isOpen ? "rounded-sm" : "rounded-full"}`}
     >
       <div className="flex items-center justify-between">
         <div className="mx-10 flex w-full items-center justify-between">
