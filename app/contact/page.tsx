@@ -4,9 +4,9 @@ import ContactClient from "./ContactClient";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Orrsman Group International Logistics. Located in Mascot, Sydney. Contact us for quotes, inquiries, or to discuss your international freight forwarding needs. Email: info@orrsmangroup.com",
+    "Get in touch with Orrsman Express Logistic. Located in Mascot, Sydney. Contact us for quotes, inquiries, or to discuss your international freight forwarding needs.",
   openGraph: {
-    title: "Contact Orrsman Express Group | Get A Quote",
+    title: "Contact Orrsman Express Logistic | Get A Quote",
     description:
       "Contact our logistics experts in Sydney. Get a quote for international freight, customs clearance, and supply chain solutions. We're here to help your business grow globally.",
     images: ["/OpenGraphImage.png"],

@@ -13,7 +13,7 @@ export default function Footer() {
               src="/FooterImageTest.png"
               width={150}
               height={150}
-              alt="Orrsman Group Logo"
+              alt="Orrsman Express Logistic Logo"
               className=""
             />
           </div>
@@ -134,7 +134,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="mt-8 border-t border-white/50 pt-4 text-center text-sm text-white">
-        &copy; {new Date().getFullYear()} Orrsman Group. All rights reserved.
+        &copy; {new Date().getFullYear()} Orrsman Express Logistic. All rights reserved.
       </div>
     </footer>
   );

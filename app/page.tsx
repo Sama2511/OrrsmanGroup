@@ -8,10 +8,10 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Orrsman Express Group - Your trusted partner for international logistics. We offer air freight, sea freight, customs clearance, and comprehensive supply chain solutions for Australian businesses expanding globally.",
+    "Orrsman Express Logistic - Your trusted partner for international logistics. We offer air freight, sea freight, customs clearance, and comprehensive supply chain solutions for Australian businesses expanding globally.",
   openGraph: {
     title:
-      "Orrsman Express Group | International Logistics & Freight Solutions",
+      "Orrsman Express Logistic | International Logistics & Freight Solutions",
     description:
       "Your trusted partner for international logistics. Expert air freight, sea freight, customs clearance, and supply chain solutions for Australian businesses.",
     images: ["/OpenGraphImage.png"],

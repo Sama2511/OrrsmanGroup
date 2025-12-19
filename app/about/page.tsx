@@ -5,12 +5,12 @@ import { client } from "@/lib/sanity";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Orrsman Express Group International Logistics. Founded with over 15 years of experience in international trade, we connect Australian businesses to global markets with reliable, expert logistics solutions.",
+    "Learn about Orrsman Express Logistic. We connect Australian businesses to global markets with reliable, expert logistics solutions. Built on expertise, driven by innovation, focused on your success.",
   openGraph: {
     title:
-      "About Orrsman Express Group | Australian International Logistics Experts",
+      "About Orrsman Express Logistic | Australian International Logistics Experts",
     description:
-      "Over 15 years of experience connecting Australian businesses to global markets. Learn about our mission, vision, and commitment to exceptional logistics service.",
+      "Connecting Australian businesses to global markets with precision and care. Learn about our mission, vision, and commitment to exceptional logistics service.",
     images: ["/OpenGraphImage.png"],
   },
 };

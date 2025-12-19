@@ -4,6 +4,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Toaster } from "sonner";
 import localFont from "next/font/local";
+import StructuredData from "@/components/StructuredData";
+import {
+  organizationSchema,
+  localBusinessSchema,
+  websiteSchema,
+} from "@/lib/structuredData";
 
 const outfit = localFont({
   src: [
@@ -54,11 +60,11 @@ const baseUrl = process.env.BASE_URL || "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Orrsman Group | International Logistics & Freight Solutions",
-    template: "%s | Orrsman Express Group",
+    default: "Orrsman Express Logistic | International Logistics & Freight Solutions",
+    template: "%s | Orrsman Express Logistic",
   },
   description:
-    "Orrsman Group International Logistics provides comprehensive freight forwarding, customs clearance, and logistics solutions connecting Australian businesses to global markets. Over 15 years of experience in international trade.",
+    "Orrsman Express Logistic delivers comprehensive freight forwarding, customs clearance, and logistics solutions connecting Australian businesses to global markets. Modern, efficient, and tailored international trade expertise.",
   keywords: [
     "international logistics",
     "freight forwarding",
@@ -71,9 +77,9 @@ export const metadata: Metadata = {
     "global shipping",
     "supply chain management",
   ],
-  authors: [{ name: "Orrsman Express Group" }],
-  creator: "Orrsman Express Group",
-  publisher: "Orrsman Express Group",
+  authors: [{ name: "Orrsman Express Logistic" }],
+  creator: "Orrsman Express Logistic",
+  publisher: "Orrsman Express Logistic",
   formatDetection: {
     email: false,
     address: false,
@@ -83,26 +89,26 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AU",
     url: baseUrl,
-    siteName: "Orrsman Express Group",
+    siteName: "Orrsman Express Logistic",
     title:
-      "Orrsman Express Group | International Logistics & Freight Solutions",
+      "Orrsman Express Logistic | International Logistics & Freight Solutions",
     description:
-      "Leading Australian logistics provider connecting businesses to global markets. Expert freight forwarding, customs clearance, and international trade solutions.",
+      "Australian logistics provider connecting businesses to global markets. Expert freight forwarding, customs clearance, and international trade solutions tailored to your needs.",
     images: [
       {
         url: "/FullLogo.png",
         width: 1200,
         height: 630,
-        alt: "Orrsman Express Group Logistics",
+        alt: "Orrsman Express Logistic",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Orrsman Express Group | International Logistics & Freight Solutions",
+      "Orrsman Express Logistic | International Logistics & Freight Solutions",
     description:
-      "Leading Australian logistics provider connecting businesses to global markets. Expert freight forwarding, customs clearance, and international trade solutions.",
+      "Australian logistics provider connecting businesses to global markets. Expert freight forwarding, customs clearance, and international trade solutions tailored to your needs.",
     images: ["/FullLogo.png"],
   },
   robots: {
@@ -126,6 +132,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${switzer.variable} ${outfit.variable}`}>
+        <StructuredData data={organizationSchema} />
+        <StructuredData data={localBusinessSchema} />
+        <StructuredData data={websiteSchema} />
         <Header />
         {children}
         <Footer />

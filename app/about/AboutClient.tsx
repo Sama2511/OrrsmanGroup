@@ -66,7 +66,7 @@ export default function AboutClient({ data }: AboutClientProps) {
             {data.image2 && (
               <Image
                 src={urlFor(data.image2).url()}
-                alt="Orrsman Group Logistics"
+                alt="Orrsman Express Logistic"
                 width={400}
                 height={350}
                 className="col-span-5 col-start-2 row-start-1 rounded-[4px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
@@ -75,7 +75,7 @@ export default function AboutClient({ data }: AboutClientProps) {
             {data.image1 && (
               <Image
                 src={urlFor(data.image1).url()}
-                alt="Orrsman Group Logistics"
+                alt="Orrsman Express Logistic"
                 width={300}
                 height={250}
                 className="col-span-3 col-start-1 row-start-2 rounded-[4px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
@@ -84,7 +84,7 @@ export default function AboutClient({ data }: AboutClientProps) {
             {data.image3 && (
               <Image
                 src={urlFor(data.image3).url()}
-                alt="Orrsman Group Logistics"
+                alt="Orrsman Express Logistic"
                 width={350}
                 height={300}
                 className="col-span-3 col-start-4 row-start-2 rounded-[4px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
@@ -95,7 +95,7 @@ export default function AboutClient({ data }: AboutClientProps) {
             {data.image3 && (
               <Image
                 src={urlFor(data.image3).url()}
-                alt="Orrsman Group Logistics"
+                alt="Orrsman Express Logistic"
                 width={500}
                 height={400}
                 className="rounded-[2px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
@@ -117,7 +117,7 @@ export default function AboutClient({ data }: AboutClientProps) {
                 width={500}
                 height={500}
                 className="h-full w-full rounded-[2px] object-cover"
-                alt="Orrsman Group Logistics"
+                alt="Orrsman Express Logistic"
               />
             )}
           </motion.div>
