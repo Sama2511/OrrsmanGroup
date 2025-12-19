@@ -1,6 +1,5 @@
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://orrsman.com.au";
 
-// Organization Schema
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -169,7 +168,9 @@ export const servicesSchema = {
 };
 
 // BreadcrumbList Schema Generator
-export const generateBreadcrumbSchema = (items: { name: string; url: string }[]) => {
+export const generateBreadcrumbSchema = (
+  items: { name: string; url: string }[],
+) => {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
