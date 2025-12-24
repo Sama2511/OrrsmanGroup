@@ -55,12 +55,13 @@ const switzer = localFont({
   display: "swap",
 });
 
-const baseUrl = process.env.BASE_URL || "http://localhost:3000";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://orrsman.com.au";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Orrsman Express Logistic | International Logistics & Freight Solutions",
+    default:
+      "Orrsman Express Logistic | International Logistics & Freight Solutions",
     template: "%s | Orrsman Express Logistic",
   },
   description:
