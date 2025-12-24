@@ -153,15 +153,15 @@ export default function AboutClient({ data }: AboutClientProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div>
-              <h1 className="font-outfit text-3xl font-semibold text-[#1e293b]">
+              <h2 className="font-outfit text-3xl font-semibold text-[#1e293b]">
                 Our Mission
-              </h1>
+              </h2>
               <p className="font-switzer mt-2 text-[#475569]">{data.mission}</p>
             </div>
             <div>
-              <h1 className="font-outfit text-3xl font-semibold text-[#1e293b]">
+              <h2 className="font-outfit text-3xl font-semibold text-[#1e293b]">
                 Our Vision
-              </h1>
+              </h2>
               <p className="font-switzer mt-2 text-[#475569]">{data.vision}</p>
             </div>
           </motion.div>

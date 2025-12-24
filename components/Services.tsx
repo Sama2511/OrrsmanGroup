@@ -28,10 +28,10 @@ export default function Services({ services }: { services: SanityDocument[] }) {
             transition={{ duration: 0.5 }}
           >
             <div>
-              <h1 className="text-foreground font-outfit mb-3 w-fit text-3xl font-semibold md:text-4xl lg:text-5xl">
+              <h2 className="text-foreground font-outfit mb-3 w-fit text-3xl font-semibold md:text-4xl lg:text-5xl">
                 Our Services
                 <span className="bg-primary block h-1 w-full"></span>
-              </h1>
+              </h2>
               <p className="text-muted-foreground font-switzer mb-5 text-base leading-relaxed md:text-lg">
                 Expert logistics solutions tailored to your business needs,
                 delivering efficiency and reliability across every mile.
