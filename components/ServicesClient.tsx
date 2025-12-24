@@ -39,6 +39,11 @@ function ServiceSection({
             alt={service.title}
             fill
             className="object-cover"
+            placeholder="blur"
+            blurDataURL={
+              service.serviceImage?.asset?.metadata?.lqip ||
+              "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlNWU3ZWIiLz48L3N2Zz4="
+            }
           />
         </div>
       </motion.div>

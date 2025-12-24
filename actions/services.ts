@@ -15,7 +15,16 @@ export async function FullServices() {
   const POSTS_QUERY = `*[_type == "service"]{
   title,
   description,
-  serviceImage,
+  serviceImage{
+    asset->{
+      _id,
+      url,
+      metadata{
+        lqip,
+        dimensions
+      }
+    }
+  },
   features,
   benefits
 }`;
@@ -39,9 +48,18 @@ export async function HomeInfo() {
   const POSTS_QUERY = `*[_type == "home"]{
   heroTitle,
   heroSub,
-    bottomTitle, 
+    bottomTitle,
     bottomSubtitle,
-    bottomImage,
+    bottomImage{
+      asset->{
+        _id,
+        url,
+        metadata{
+          lqip,
+          dimensions
+        }
+      }
+    },
     stats
 }`;
   const options = { next: { revalidate: 30 } };

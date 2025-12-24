@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { SanityDocument } from "next-sanity";
 import { Input } from "./ui/input";
-import { Search } from "lucide-react";
 
 type HeroSectionProps = {
   home: SanityDocument[];
@@ -15,7 +14,7 @@ export default function HeroSection(home: HeroSectionProps) {
   return (
     <section className="relative mt-10 flex h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-[#e7e5e4]">
       <Image
-        src="/Homepageimage.png"
+        src="/HomepageImage.png"
         alt="Global logistics illustration"
         fill
         priority

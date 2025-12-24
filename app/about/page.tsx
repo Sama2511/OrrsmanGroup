@@ -30,10 +30,46 @@ async function getAboutData(): Promise<AboutData | null> {
   const query = `*[_type == "About"][0]{
     title,
     description,
-    image1,
-    image2,
-    image3,
-    image4,
+    image1{
+      asset->{
+        _id,
+        url,
+        metadata{
+          lqip,
+          dimensions
+        }
+      }
+    },
+    image2{
+      asset->{
+        _id,
+        url,
+        metadata{
+          lqip,
+          dimensions
+        }
+      }
+    },
+    image3{
+      asset->{
+        _id,
+        url,
+        metadata{
+          lqip,
+          dimensions
+        }
+      }
+    },
+    image4{
+      asset->{
+        _id,
+        url,
+        metadata{
+          lqip,
+          dimensions
+        }
+      }
+    },
     mission,
     vision
   }`;

@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { SanityDocument } from "next-sanity";
 import { Check } from "lucide-react";
 import { urlFor } from "@/lib/sanity";
+import Image from "next/image";
 
 type HomeClientProps = {
   services: SanityDocument[];
@@ -84,10 +85,17 @@ export function HomeClient({ services, home }: HomeClientProps) {
               </p>
 
               <div className="lg:hidden">
-                <img
+                <Image
                   src={urlFor(home[0].bottomImage).url()}
                   alt="Logistics"
+                  width={500}
+                  height={500}
                   className="w-full max-w-md lg:max-w-lg"
+                  placeholder="blur"
+                  blurDataURL={
+                    home[0].bottomImage?.asset?.metadata?.lqip ||
+                    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlNWU3ZWIiLz48L3N2Zz4="
+                  }
                 />
               </div>
 
@@ -128,10 +136,17 @@ export function HomeClient({ services, home }: HomeClientProps) {
               animate={trustedInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.7 }}
             >
-              <img
+              <Image
                 src={urlFor(home[0].bottomImage).url()}
                 alt="Logistics"
+                width={500}
+                height={500}
                 className="w-full max-w-md lg:max-w-lg"
+                placeholder="blur"
+                blurDataURL={
+                  home[0].bottomImage?.asset?.metadata?.lqip ||
+                  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlNWU3ZWIiLz48L3N2Zz4="
+                }
               />
             </motion.div>
           </div>

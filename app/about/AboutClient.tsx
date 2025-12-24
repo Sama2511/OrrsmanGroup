@@ -70,6 +70,11 @@ export default function AboutClient({ data }: AboutClientProps) {
                 width={400}
                 height={350}
                 className="col-span-5 col-start-2 row-start-1 rounded-[4px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
+                placeholder="blur"
+                blurDataURL={
+                  data.image2?.asset?.metadata?.lqip ||
+                  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlNWU3ZWIiLz48L3N2Zz4="
+                }
               />
             )}
             {data.image1 && (
@@ -79,6 +84,11 @@ export default function AboutClient({ data }: AboutClientProps) {
                 width={300}
                 height={250}
                 className="col-span-3 col-start-1 row-start-2 rounded-[4px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
+                placeholder="blur"
+                blurDataURL={
+                  data.image1?.asset?.metadata?.lqip ||
+                  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlNWU3ZWIiLz48L3N2Zz4="
+                }
               />
             )}
             {data.image3 && (
@@ -88,6 +98,11 @@ export default function AboutClient({ data }: AboutClientProps) {
                 width={350}
                 height={300}
                 className="col-span-3 col-start-4 row-start-2 rounded-[4px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
+                placeholder="blur"
+                blurDataURL={
+                  data.image3?.asset?.metadata?.lqip ||
+                  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlNWU3ZWIiLz48L3N2Zz4="
+                }
               />
             )}
           </motion.div>
@@ -99,6 +114,11 @@ export default function AboutClient({ data }: AboutClientProps) {
                 width={500}
                 height={400}
                 className="rounded-[2px] shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-shadow duration-300"
+                placeholder="blur"
+                blurDataURL={
+                  data.image3?.asset?.metadata?.lqip ||
+                  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlNWU3ZWIiLz48L3N2Zz4="
+                }
               />
             )}
           </div>
@@ -118,6 +138,11 @@ export default function AboutClient({ data }: AboutClientProps) {
                 height={500}
                 className="h-full w-full rounded-[2px] object-cover"
                 alt="Orrsman Express Logistic"
+                placeholder="blur"
+                blurDataURL={
+                  data.image4?.asset?.metadata?.lqip ||
+                  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlNWU3ZWIiLz48L3N2Zz4="
+                }
               />
             )}
           </motion.div>
